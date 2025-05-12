@@ -1,0 +1,17 @@
+
+ .navbar{
+    background-color: rgb(59, 59, 125);
+    height: 64px;
+  
+ }
+
+ .divpad{
+   padding-left: 2px;
+   padding-top: 2px;
+ }
+
+ .flexContainerNav{
+  display: flex;
+  justify-content: space-between;
+ }
+

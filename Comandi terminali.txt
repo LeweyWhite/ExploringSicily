@@ -1,0 +1,3 @@
+Per salvare i progressi usare: git pull origin main 
+
+git remote add origin https://github.com/LeweyWhite/UniPa-Progetto-Sito-Web.git
