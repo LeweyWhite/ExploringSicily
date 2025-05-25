@@ -6,13 +6,39 @@ body{
    text-align: center;
     font-size: 150px;
     margin-top: 0%;
-    text-shadow: 2px 2px 5px rgba(11, 30, 239, 0.741);
-
-
-    
+    text-shadow: 2px 2px 5px rgba(11, 30, 239, 0.741)
     
 }
-
+ body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+        }
+    
+        .immagine {
+          position: relative;
+          width: 100%;
+          height: 100vh;
+          overflow: hidden;
+        }
+    
+        .tempio {
+          width: 100%;
+          height: 80%;
+          object-fit: cover;
+          filter: blur(8px);
+        }
+    
+        .agrigento {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          font-size: 6em;
+          font-family: Georgia, 'Times New Roman', Times, serif
+        }
+          
 p {
     margin-left: 20%;
     margin-right: 20%;
