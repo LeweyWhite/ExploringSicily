@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form di login</title>
+        <link rel="stylesheet" href="loginpage.css">
+ 
+    </head>
+    <body>
+        <div id="form_container" class="container">
+            <h1>LOGIN</h1>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="name">NAME:</label>
+                    <input type="text" id="username" class="input-field">
+                </div>
+                <div class="input-group">
+                    <label for="password">PASSWORD:</label>
+                    <input type="password" id="Password" class="input-field">
+                </div>
+                <button type="button" onclick="login()" class="btn">Invia</button>
+            </form>
+            <p id="resultElement"></p>
+        </div>
+        <script src="loginpage.js"></script>
+ 
+    </body>
+</html>

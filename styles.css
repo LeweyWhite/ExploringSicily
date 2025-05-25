@@ -1,17 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
- .navbar{
-    background-color: rgb(59, 59, 125);
-    height: 64px;
-  
- }
+.roboto-100 {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+/* Contenuto Css navbar Non toccare */
+.navbar {
+    background-color: #af1919;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;                
+    top: 0; 
+    left: 0;
+    right: 0;
+    z-index: 1000;     
+}
 
- .divpad{
+
+.divpad {
    padding-left: 2px;
    padding-top: 2px;
- }
+}
 
- .flexContainerNav{
-  display: flex;
-  justify-content: space-between;
- }
 
+.flexContainerNav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+}
+
+.nav-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Contenuto Css navbar Non toccare */
+
+/* Importazione font */
+
+@font-face {
+  font-family: 'EudoxusSans';
+  src: url('font/EudoxusSans-Bold.ttf');
+}
+/* Importazione font */
+
+/* BANNER */
+.banner {
+    background-image: url('img/bannerScroll.png');
+    display: flex;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    background-position: center;
+    top: 92px;    
+    padding: 60px; 
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: 10px;
+   
+   
+}
+
+.banner h1 {
+    font-size: 5rem;  
+    color: rgb(252, 252, 252);
+    font-family: EudoxusSans;
+    text-align: center;
+    margin: 0;  
+    padding: 20px;
+    top: 50%;   
+    left: 50%;
+    transform: translate(-50%, -5%); 
+    position: relative;
+    z-index: 1;
+    /* animation: scroll 1s ease-in-out infinite alternate; */
+}
+
+/*contenitore immagini galleria */
+.flex-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #ffffff; /* Colore di sfondo per la galleria */
+    margin-top: 92px; /* Spazio sopra la galleria per evitare sovrapposizione con la navbar */   
+    position: relative;
+    z-index: 0;  
+    left: -10px;
+
+}
+
+.portrait{
+    width: 650px; /* Larghezza dell'immagine */
+    height: 800px; /* Altezza dell'immagine */
+    object-fit: cover;
+    position: relative; 
+    filter: sepia(50%) grayscale(0%); /* Applica il filtro seppia e scala di grigi */
+  
+}
+
+
+.portrait:hover{
+    filter:  sepia(0%) grayscale(0%); /* Rimuove il filtro in scala di grigi al passaggio del mouse */
+    transition: filter 0.3s ease-in; /* Aggiunge una transizione per un effetto più fluido */
+   
+}
+
+
+/*  Parte immagini testo */
+.city-name {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    font-family: EudoxusSans;
+    
+}
+
+
+.portrait:hover .city-name {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    font-size: 5rem;
+    animation: ingrandimento 0.5s ease forwards;
+}
+
+.portrait:not(:hover) .city-name {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    font-size: 3rem;
+    animation:  0.4s ease forwards;
+}
+/* Parte immagini testo */
+
+
+/* Animazioni city-name*/
+@keyframes ingrandimento {
+  from { font-size: 3rem;; }
+  to   { font-size: 5rem;; }
+}
+
+@keyframes riducimento {
+    from { top: 20%; }
+    to   { top: 80%; }
+}
+/* Animazioni */
+
+
+.menuLista{
+    z-index: 1100;
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    border-bottom: 100px;
+    display: flex;
+    flex-direction: row; /* Le icone saranno in orizzontale */
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.308);
+    border-radius: 10px; /* Angoli arrotondati per un aspetto più gradevole */
+
+    
+}
+
+.menuLista ul {
+    display: flex;
+    flex-wrap: wrap; /* Permette di andare a capo */
+    flex-direction: row; /* Le icone saranno in orizzontale */
+                        
+    gap: 30px; /* spazio tra le voci del menu */
+    align-items: center;
+    justify-content: center;   /* Centra gli elementi */
+    list-style: none; /* Rimuove i punti elenco */
+    padding: 0;
+    margin: 0;
+}
+
+/* Allinea icona e testo orizzontalmente dentro ogni voce */
+.menuLista li a {
+    display:flex;
+    list-style: none; /* Rimuove i punti elenco */
+    justify-content: center; /* Centra gli elementi all'interno del li */
+    align-items: center; /* Allinea verticalmente gli elementi */
+    flex-direction: column; /* Icona sopra, testo sotto. Usa 'row' se vuoi testo a fianco */
+    margin: 0 10px; /* Spazio tra le icone */
+    padding: 10px; /* Spazio interno per ogni voce del menu */
+    border-radius: 10px; /* Angoli arrotondati per un aspetto più gradevole */
+    transition: background-color 0.3s ease; /* Transizione per un effetto più fluido */ 
+    text-decoration: none; /* Rimuove la sottolineatura */
+   
+}
+
+
+
+
+/* Se vuoi che il testo sia accanto all'icona */
+.menuLista h5 {
+    flex-direction: row; /* Icona sopra, testo sotto. Usa 'row' se vuoi testo a fianco */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font personalizzato */
+    font-size: 1.2rem; /* Dimensione del testo */
+    color: white; /* Colore del testo */
+    text-align: center; /* Allinea il testo al centro */
+    margin: 0 10px; /* Spazio tra le icone */
+    display: flex; /* Rende il link un flex container per icona + testo */
+    flex-direction: column; /* Icona sopra, testo sotto. Usa 'row' se vuoi testo a fianco */
+    align-items: center;
+ 
+  
+}
+
+
+
+.menuLista img {
+    width: 100px;
+    height: 100px;
+    margin: 0 0 10px 0; /* Spazio sotto l'icona */
+    display: flex; /* Rende il link un flex container per icona + testo */
+    flex-direction: column; /* Icona sopra, testo sotto.*/
+    align-items: center;   /* Allinea l'icona al centro */
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 20px; /* Spazio tra le icone */
+    text-decoration: none;
+}
+
+
+.menuLista li:hover {
+    background-color: rgba(182, 178, 178, 0.3); /* Colore di sfondo al passaggio del mouse */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transizione per un effetto più fluido */
+                  
+}

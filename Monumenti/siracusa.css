@@ -1,0 +1,96 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+h1{
+    color:rgb(251, 251, 251);
+   text-align: center;
+    font-size: 150px;
+    margin-top: 0%;
+    text-shadow: 2px 2px 5px rgba(11, 30, 239, 0.741);
+
+
+    
+    
+}
+
+p {
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    margin-top: 0%;
+    
+
+}
+
+img.cattedrale{
+    width: 1700px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+
+    
+}
+img.siracusa1 {
+    width: 280px ;
+    margin-left: 200px;
+    margin-right: auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+img.siracusa2 {
+    width: 280px;
+    margin-left: 100px;
+    margin-right: auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+img.siracusa3{
+    width: 280px;
+    margin-left: 100px;
+    margin-right: auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+img.siracusa4 {
+    width: 280px ;
+    margin-left: 200px;
+    margin-right: auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+}
+
+img.siracusa5 {
+    width: 280px;
+    margin-left: 100px;
+    margin-right: auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+img.siracusa6{
+    width: 280px;
+    margin-left: 100px;
+    margin-right: auto;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.Siracusa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 6em;
+    font-family: Georgia, 'Times New Roman', Times, serif
+  
+}
+.evidenziato {
+    color: rgb(44, 16, 157);
+    font-weight: bold;
+    padding: 0 4px;
+    border-radius: 4px;
+  }
+  
+  
+  

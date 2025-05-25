@@ -1,4 +1,3 @@
- <script>
 function sidebar_open() {
   document.getElementById("Sidebar").style.display = "block";
 }
@@ -8,5 +7,3 @@ function sidebar_close() {
 }
 
 
-
-</script>
