@@ -42,6 +42,7 @@
     position: fixed;
 }
 
+    
 .nav-logo {
     position: absolute;
     left: 50%;
@@ -74,7 +75,16 @@
    
    
 }
-
+@media screen and (max-width: 900px) {
+    .banner {
+        background-image: url('img/bannerScroll.png'); /* Immagine di sfondo per schermi piccoli */
+        background-size: cover;
+        background-repeat: no-repeat;   
+        background-position: center;
+        padding: 20px; /* Riduce il padding per schermi più piccoli */
+    }
+    
+}
 .banner h1 {
     font-size: 5rem;  
     color: rgb(252, 252, 252);
@@ -100,6 +110,11 @@
     z-index: 0;  
     left: -10px;
 
+}
+@media (max-width: 900px) {
+    .flex-container {
+        zoom: 0.8; /* Riduce la dimensione della galleria su schermi più piccoli */         
+    }
 }
 
 .portrait{
