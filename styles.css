@@ -61,30 +61,22 @@
 
 /* BANNER */
 .banner {
-    background-image: url('img/bannerScroll.png');
-    display: flex;
+       display: flex;
     position: relative;
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;   
     background-position: center;
-    top: 92px;    
-    padding: 60px; 
-    margin-left: -8px;
-    margin-right: -8px;
-    margin-bottom: 10px;
+    top: 25px; /* Sposta il banner sotto la navbar */
    
+    transform: scale(0.5);
+    margin-left: -500px;
+  
+
    
 }
-@media screen and (max-width: 900px) {
-    .banner {
-        background-image: url('img/bannerScroll.png'); /* Immagine di sfondo per schermi piccoli */
-        background-size: cover;
-        background-repeat: no-repeat;   
-        background-position: center;
-        padding: 20px; /* Riduce il padding per schermi più piccoli */
-    }
+
     
-}
+
 .banner h1 {
     font-size: 5rem;  
     color: rgb(252, 252, 252);
@@ -105,7 +97,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: #ffffff; /* Colore di sfondo per la galleria */
-    margin-top: 92px; /* Spazio sopra la galleria per evitare sovrapposizione con la navbar */   
+ 
     position: absolute;
     z-index: 0;  
     scale: 0.8;
