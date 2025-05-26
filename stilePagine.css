@@ -10,7 +10,7 @@ body{
         .immagine {
             position: relative;
             width: 100%;
-            margin-bottom: 20px;
+            
             
             overflow: hidden;
         }
@@ -61,13 +61,14 @@ img.ragusaSfondo{
 
 }
 
+/*
 img.immagine{
     width: 280px;
     margin-left: 200px;
     margin-right: auto;
     box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
 }
-
+*/
 
 .Ragusa {
     position: absolute;
@@ -90,19 +91,24 @@ img.immagine{
 /* Media gallery */
 .galleria {
     position: relative;
-    gap:20px;
-    transform: scale(0.8);
-    padding: 20px;  
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-   
+    grid-gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+
+    
+    
     max-width: 1200px;
-    align-items: start;
+    list-style: none;
+  
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
     .galleria img {
-      width: 100%;
-      height: auto;
+      height:fit-content;
       border-radius: 8px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
