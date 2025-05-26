@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .galleria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .galleria img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .galleria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Galleria Dinamica</h1>
+
+  <div class="galleria">
+    <img src="immagine1.jpg" alt="1">
+    <img src="immagine2.jpg" alt="2">
+    <img src="immagine3.jpg" alt="3">
+    <img src="immagine4.jpg" alt="4">
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="ingrandita">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const imgs = document.querySelectorAll('.galleria img');
+    const lightboxImg = lightbox.querySelector('img');
+
+    imgs.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

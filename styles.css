@@ -106,16 +106,28 @@
     grid-template-columns: repeat(3, 1fr);
     background-color: #ffffff; /* Colore di sfondo per la galleria */
     margin-top: 92px; /* Spazio sopra la galleria per evitare sovrapposizione con la navbar */   
-    position: relative;
+    position: absolute;
     z-index: 0;  
-    left: -10px;
+    scale: 0.8;
+   
+    left: -200px;
+   
+    
+
+    
+    
 
 }
-@media (max-width: 900px) {
+@media  screen and (min-width: 800px) {
     .flex-container {
-        zoom: 0.8; /* Riduce la dimensione della galleria su schermi più piccoli */         
+    scale: 0.8;
+    left: -200px;
+    top: -0px;
+    
     }
 }
+
+
 
 .portrait{
     width: 650px; /* Larghezza dell'immagine */
@@ -182,6 +194,7 @@
 .menuLista{
     z-index: 1100;
     position: absolute;
+    transform: scale(0.8);
     top: 60%;
     width: 100%;
     border-bottom: 100px;
