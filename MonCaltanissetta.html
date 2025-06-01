@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title> Catania Monumenti</title>
+        <link href="stilePagine.css" rel="stylesheet">
+        <html lang="en-US">
+     
+     </head> 
+
+     
+     <body>
+        <div id="navbar"></div>
+  
+        <div class="immagine">
+            <img class="ragusaSfondo" src="">
+            <h1 class="Ragusa"> THE MONUMENTS OF CATANIA </h1>
+
+        </div>
+  </div>     
+
+        <p> </p>
+
+
+         <div class="galleria">
+            <img class="immagine" src="" alt="1">
+            <img class="immagine" src="">
+            <img class="immagine" src="">
+            <img class="immagine" src="">
+            <img class="immagine" src="">
+            <img class="immagine" src="">
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="ingrandita">
+  </div>
+
+  <div class="footerbar">
+    <div class="elementiFooterbar">
+      <ul>
+        <li><a href="https://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook</a></li>
+        <li><a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a></li>
+        <li><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">Youtube</a></li>
+        <li><a href=""><img src="https://cdn-icons-png.flaticon.com/512/2343/2343697.png" alt="contatti">Contact</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+  
+
+
+
+</body>
+
+
+
+
+
+
+
+    
+</html>
+
+<script>
+// Carica il contenuto del file navbar.html e lo inserisce nell'elemento con id "navbar"
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+    });
+</script>
+
+<script src="galleryscript.js"></script>

@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title> Messina Monumenti</title>
+        <link href="stilePagine.css" rel="stylesheet">
+        <html lang="en-US">
+     
+     </head> 
+
+     
+     <body>
+        <div id="navbar"></div>
+  
+        <div class="immagine">
+            <img class="ragusaSfondo" src="https://scorcidimondo.it/wp-content/uploads/2019/11/Messina-Sicilia.png">
+            <h1 class="Ragusa"> THE MONUMENTS OF MESSINA </h1>
+
+        </div>
+  </div>     
+
+        <p> Messina, the gateway to Sicily, is a city that captivates with its history, its monuments, and its breathtaking views.Located on the northeastern tip of the island, across from Calabria, Messina has always held a strategic position as a crossroads between the Mediterranean and trade routes.
+          One of the city's main landmarks is Piazza del Duomo, dominated by the majestic Cathedral of Messina, an architectural masterpiece that blends Romanesque, Gothic, and Baroque styles. The cathedral is famous for its astronomical clock, one of the largest in Europe, which draws tourists and onlookers every day to witness its spectacular display at noon.
+          Not far from the Cathedral is the Bell Tower of the Duomo, the tallest in Italy, offering panoramic views of the city and the Strait of Messina.<br> The bell tower houses a carillon that plays music every hour, creating a magical atmosphere.
+          The Teatro Vittorio Emanuele, one of the oldest theaters in Italy, is another significant monument in Messina. Inaugurated in 1852, the theater is a symbol of the city's cultural life and hosts prestigious theatrical, musical, and operatic events every year.
+          Another point of interest is the Monument to Christ the King, located on San Raineri hill, which overlooks the city and offers a spectacular view of the strait and the Calabrian coast. This monument, about 16 meters high, represents the Christian faith of the city.
+          <br>The Fountain of Orion, also located in Piazza del Duomo, is a masterpiece of Sicilian Renaissance art. It was built in 1553 by Giovanni Angelo Montorsoli and represents the myth of Orion, the hunter turned into a constellation. The fountain is a symbol of power and beauty.
+          Messina, unfortunately, has suffered severe damage from earthquakes, but despite the destruction, it has managed to preserve its history, its monuments, and its resilient spirit. Today, the city presents itself as a perfect blend of modernity and tradition, where culture and history coexist in perfect harmony.
+          </p>
+
+
+         <div class="galleria">
+            <img class="immagine" src="https://visitme.comune.messina.it/sites/default/files/2021-02/passeggiata-centro-storico-messina-gallery-20.jpg?h=827069f2&amp;itok=ld7hIbZn" alt="1">
+            <img class="immagine" src="https://www.theworldofsicily.com/wp-content/uploads/2018/11/La-Fontana-di-Orione-a-Messina.jpg">
+            <img class="immagine" src="https://i0.wp.com/www.esplorasicilia.com/wordpress/wp-content/uploads/2011/09/Duomo-di-Messina-shutterstock_1478913326.jpg?resize=1000%2C667&ssl=1">
+            <img class="immagine" src="https://www.travel365.it/foto/messina-monumento-mare-sicilia.jpg">
+            <img class="immagine" src="https://www.pantravelsolution.com/resources/uploads//travels/me3.JPG">
+            <img class="immagine" src="https://upload.wikimedia.org/wikipedia/commons/d/da/Chiesa_del_Carmine_di_Messina_e_annesso_Convento_dei_Carmelitani.jpg">
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="ingrandita">
+  </div>
+
+  <div class="footerbar">
+    <div class="elementiFooterbar">
+      <ul>
+        <li><a href="https://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook</a></li>
+        <li><a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a></li>
+        <li><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">Youtube</a></li>
+        <li><a href=""><img src="https://cdn-icons-png.flaticon.com/512/2343/2343697.png" alt="contatti">Contact</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+  
+
+
+
+</body>
+
+
+
+
+
+
+
+    
+</html>
+
+<script>
+// Carica il contenuto del file navbar.html e lo inserisce nell'elemento con id "navbar"
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+    });
+</script>
+
+<script src="galleryscript.js"></script>

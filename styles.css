@@ -64,13 +64,15 @@
 /* BANNER */
 .banner {
     display: flex; /* Usa il layout flexbox per il banner */
-    position: relative; /* Posizione relativa per posizionare gli elementi all'interno del banner */
-    background-size: auto; /* Dimensione dello sfondo */
-    background-repeat: no-repeat;  /* Non ripete lo sfondo */  
-    background-position: center; /* Posiziona lo sfondo al centro */
-    top: 25px; /* Sposta il banner sotto la navbar */
-    transform: scale(0.5); /* Scala il banner al 50% della sua dimensione originale */
-    margin-left: -500px; /* Sposta il banner a sinistra di 500px */
+    position: relative; /* Posizione relativa per posizionare gli elementi all'interno del banner */  
+    top: 100px; /* Sposta il banner sotto la navbar */
+    
+    background-image: url('img/banner.jpg'); /* Immagine di sfondo del banner */    
+    background-size: cover; /* Copre l'intera area del banner */
+    background-position: center; /* Centra l'immagine di sfondo */  
+    background-repeat: no-repeat; /* Non ripete l'immagine di sfondo */
+    z-index: 1; /* Assicura che il banner sia sotto altri elementi della pagina */
+    width: 100%; /* Larghezza del banner */ 
 }
 
 .banner h1 {
@@ -90,34 +92,42 @@
 /*contenitore immagini galleria */
 .flex-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: #ffffff; /* Colore di sfondo per la galleria */
-    position: absolute;
-    z-index: 0;  
-    scale: 0.8;
-    left: -200px;
+    position: relative; /* Posizione relativa per posizionare gli elementi all'interno della galleria */
+    z-index: 0; 
+    top: 100px; /* Sposta la galleria sotto il banner */
+    width: 100vw; /* Larghezza della galleria */ 
+    grid-template-columns: repeat(3, 1fr); /* Tre colonne di uguale larghezza */
+    background-color: #c50000; /* Colore di sfondo per la galleria */
+ 
 }
 
-@media  screen and (min-width: 800px) {
-.flex-container {
-    scale: 0.8;
-    left: -200px;
-    top: -0px;
+@media (min-width: 2048px) {
+    .flex-container {
+        display: grid;
+        position: relative; /* Posizione relativa per posizionare gli elementi all'interno della galleria */
+        z-index: 0; 
+        top: 100px; /* Sposta la galleria sotto il banner */
+        width: 100vw; /* Larghezza della galleria */ 
+        grid-template-columns: repeat(3, 1fr); /* Tre colonne di uguale larghezza */
+        background-color: #c50000; /* Colore di sfondo per la galleria */
+        left: 50px; /* Sposta la galleria a sinistra di 50px */
     }
+  
 }
 
 .portrait{
-    width: 650px; /* Larghezza dell'immagine */
+    width: 640px; /* Larghezza dell'immagine */
     height: 800px; /* Altezza dell'immagine */
     object-fit: cover;
     position: relative; 
-    filter: sepia(50%) grayscale(0%); /* Applica il filtro seppia e scala di grigi */
+    filter: sepia(50%) grayscale(0%) brightness(70%); /* Applica il filtro seppia e scala di grigi */
 }
 
-.portrait:hover{
+.portrait:hover {
     filter:  sepia(0%) grayscale(0%); /* Rimuove il filtro in scala di grigi al passaggio del mouse */
     transition: filter 0.3s ease-in; /* Aggiunge una transizione per un effetto più fluido */
 }
+
 
 /*  Parte immagini testo */
 .city-name {
@@ -140,12 +150,12 @@
     animation: ingrandimento 0.5s ease forwards;
 }
 
-.portrait:not(:hover) .city-name {
+.portrait:not(:hover) .city-name { /* Quando non è in hover */
     position: absolute;
     transform: translate(-50%, -50%);
     top: 20%;
     font-size: 3rem;
-    animation:  0.4s ease forwards;
+    animation: riducimento 0.4s ease backwards;
 }
 /* Parte immagini testo */
 
@@ -157,8 +167,8 @@
 }
 
 @keyframes riducimento {
-    from { top: 20%; }
-    to   { top: 80%; }
+      from { font-size: 5rem;; }
+    to   { font-size: 3rem;; }
 }
 /* Animazioni */
 
@@ -170,6 +180,7 @@
     top: 60%;
     width: 100%;
     border-bottom: 100px;
+    
     display: flex;
     flex-direction: row; /* Le icone saranno in orizzontale */
     align-items: center;
@@ -202,6 +213,7 @@
     border-radius: 10px; /* Angoli arrotondati per un aspetto più gradevole */
     transition: background-color 0.3s ease; /* Transizione per un effetto più fluido */ 
     text-decoration: none; /* Rimuove la sottolineatura */
+    
 }
 
 

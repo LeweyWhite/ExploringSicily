@@ -111,7 +111,7 @@ an opportunity to immerse yourself in the authenticity of the city and discover 
 
 <script>
 // Carica il contenuto del file navbar.html e lo inserisce nell'elemento con id "navbar"
-  fetch('navbar.html')
+  fetch('/navbar.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('navbar').innerHTML = data;
