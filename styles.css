@@ -1,52 +1,54 @@
+/* Reset di base per tutti gli elementi: rimuove margini e padding, imposta box-sizing */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    margin: 0; /* Rimuove i margini di tutti gli elementi */
+    padding: 0; /* Rimuove il padding di tutti gli elementi */
+    box-sizing: border-box; /* Imposta il box-sizing per includere padding e bordi nella larghezza e altezza degli elementi */
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 .roboto-100 {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
+    font-family: "Roboto", sans-serif; /* Imposta il font Roboto come font principale */
+    font-optical-sizing: auto; /* Abilita il ridimensionamento ottico del font */
+    font-weight: 100; /* Imposta il peso del font a 100 */
+    font-style: normal; /* Imposta lo stile del font a normale */
+    font-variation-settings: "wdth" 100; /* Imposta la larghezza del font a 100 */
 }
 /* Contenuto Css navbar Non toccare */
 .navbar {
-    background-color: #af1919;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;                
-    top: 0; 
-    left: 0;
-    right: 0;
-    z-index: 1000;     
-}
+    background-color: #af1919; /* Colore di sfondo della navbar */
+    height: 100px; /* Altezza della navbar */
+    display: flex; /* Usa il layout flexbox per la navbar */
+    align-items: center; /* Allinea gli elementi al centro verticalmente */
+    justify-content: center; /* Allinea gli elementi al centro orizzontalmente */
+    position: fixed; /* Fissa la navbar in alto alla pagina */                
+    top: 0;     /* Posiziona la navbar in alto */
+    left: 0; /* Posiziona la navbar a sinistra */
+    right: 0;   /* Posiziona la navbar a destra */
+    z-index: 1000;      /* Assicura che la navbar sia sopra altri elementi della pagina */
+} 
 
 
 .divpad {
-   padding-left: 2px;
-   padding-top: 2px;
+    padding-left: 2px; /* Aggiunge un padding a sinistra per allineare il contenuto */   
+    padding-top: 2px;   /* Aggiunge un padding in alto per allineare il contenuto */
 }
 
 
 .flexContainerNav {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    position: fixed;
+    display: flex; /* Usa il layout flexbox per la navbar */
+    width: 100%; /* Larghezza della navbar */
+    align-items: center; /* Allinea gli elementi al centro verticalmente */
+    justify-content: space-between; /* Spazia gli elementi in modo che ci sia spazio tra di loro */
+    padding: 0 20px; /* Padding orizzontale per la navbar */
+    position: fixed; /* Fissa la navbar in alto alla pagina */
 }
 
-    
+
 .nav-logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: absolute; /* Posiziona il logo in modo assoluto */
+    left: 50%; /* Centra il logo orizzontalmente */
+    transform: translateX(-50%); /* Sposta il logo indietro della metà della sua larghezza per centrarlo */
 }
 
 /* Contenuto Css navbar Non toccare */
@@ -54,42 +56,35 @@
 /* Importazione font */
 
 @font-face {
-  font-family: 'EudoxusSans';
-  src: url('font/EudoxusSans-Bold.ttf');
+    font-family: 'EudoxusSans';     /* Nome del font */
+    src: url('font/EudoxusSans-Bold.ttf'); /* Percorso del file del font */
 }
 /* Importazione font */
 
 /* BANNER */
 .banner {
-       display: flex;
-    position: relative;
-    background-size: auto;
-    background-repeat: no-repeat;   
-    background-position: center;
+    display: flex; /* Usa il layout flexbox per il banner */
+    position: relative; /* Posizione relativa per posizionare gli elementi all'interno del banner */
+    background-size: auto; /* Dimensione dello sfondo */
+    background-repeat: no-repeat;  /* Non ripete lo sfondo */  
+    background-position: center; /* Posiziona lo sfondo al centro */
     top: 25px; /* Sposta il banner sotto la navbar */
-   
-    transform: scale(0.5);
-    margin-left: -500px;
-  
-
-   
+    transform: scale(0.5); /* Scala il banner al 50% della sua dimensione originale */
+    margin-left: -500px; /* Sposta il banner a sinistra di 500px */
 }
 
-    
-
 .banner h1 {
-    font-size: 5rem;  
-    color: rgb(252, 252, 252);
-    font-family: EudoxusSans;
-    text-align: center;
-    margin: 0;  
-    padding: 20px;
-    top: 50%;   
-    left: 50%;
-    transform: translate(-50%, -5%); 
+    font-size: 5rem;   /* Dimensione del testo del titolo */
+    color: rgb(252, 252, 252); /* Colore del testo del titolo */
+    font-family: EudoxusSans; /* Font del titolo */
+    text-align: center; /* Allinea il testo al centro */
+    margin: 0;     /* Rimuove il margine del titolo */
+    padding: 20px; /* Padding per il titolo */
+    top: 50%;  /* Posiziona il titolo al centro verticale del banner */  
+    left: 50%; /* Posiziona il titolo al centro orizzontale del banner */
+    transform: translate(-50%, -5%);   
     position: relative;
     z-index: 1;
-    /* animation: scroll 1s ease-in-out infinite alternate; */
 }
 
 /*contenitore immagini galleria */
@@ -97,29 +92,19 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: #ffffff; /* Colore di sfondo per la galleria */
- 
     position: absolute;
     z-index: 0;  
     scale: 0.8;
-   
     left: -200px;
-   
-    
-
-    
-    
-
 }
+
 @media  screen and (min-width: 800px) {
-    .flex-container {
+.flex-container {
     scale: 0.8;
     left: -200px;
     top: -0px;
-    
     }
 }
-
-
 
 .portrait{
     width: 650px; /* Larghezza dell'immagine */
@@ -127,16 +112,12 @@
     object-fit: cover;
     position: relative; 
     filter: sepia(50%) grayscale(0%); /* Applica il filtro seppia e scala di grigi */
-  
 }
-
 
 .portrait:hover{
     filter:  sepia(0%) grayscale(0%); /* Rimuove il filtro in scala di grigi al passaggio del mouse */
     transition: filter 0.3s ease-in; /* Aggiunge una transizione per un effetto più fluido */
-   
 }
-
 
 /*  Parte immagini testo */
 .city-name {
@@ -148,9 +129,8 @@
     font-size: 3rem;
     text-align: center;
     font-family: EudoxusSans;
-    
-}
 
+}
 
 .portrait:hover .city-name {
     position: absolute;
@@ -172,8 +152,8 @@
 
 /* Animazioni city-name*/
 @keyframes ingrandimento {
-  from { font-size: 3rem;; }
-  to   { font-size: 5rem;; }
+    from { font-size: 3rem;; }
+    to   { font-size: 5rem;; }
 }
 
 @keyframes riducimento {
@@ -196,15 +176,12 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.308);
     border-radius: 10px; /* Angoli arrotondati per un aspetto più gradevole */
-
-    
 }
 
 .menuLista ul {
     display: flex;
     flex-wrap: wrap; /* Permette di andare a capo */
-    flex-direction: row; /* Le icone saranno in orizzontale */
-                        
+    flex-direction: row; /* Le icone saranno in orizzontale */                    
     gap: 30px; /* spazio tra le voci del menu */
     align-items: center;
     justify-content: center;   /* Centra gli elementi */
@@ -225,14 +202,13 @@
     border-radius: 10px; /* Angoli arrotondati per un aspetto più gradevole */
     transition: background-color 0.3s ease; /* Transizione per un effetto più fluido */ 
     text-decoration: none; /* Rimuove la sottolineatura */
-   
 }
 
 
 
 
 /* Se vuoi che il testo sia accanto all'icona */
-.menuLista h5 {
+    .menuLista h5 {
     flex-direction: row; /* Icona sopra, testo sotto. Usa 'row' se vuoi testo a fianco */
     text-decoration: none; /* Rimuove la sottolineatura */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font personalizzato */
@@ -243,8 +219,6 @@
     display: flex; /* Rende il link un flex container per icona + testo */
     flex-direction: column; /* Icona sopra, testo sotto. Usa 'row' se vuoi testo a fianco */
     align-items: center;
- 
-  
 }
 
 
@@ -264,8 +238,7 @@
 
 
 .menuLista li:hover {
-    background-color: rgba(182, 178, 178, 0.3); /* Colore di sfondo al passaggio del mouse */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transizione per un effetto più fluido */
-                  
+background-color: rgba(182, 178, 178, 0.3); /* Colore di sfondo al passaggio del mouse */
+cursor: pointer;
+transition: background-color 0.3s ease; /* Transizione per un effetto più fluido */            
 }
