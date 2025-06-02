@@ -90,7 +90,8 @@ img.immagine{
 .galleria {
     position: relative;
     gap:20px;
-    transform: scale(0.8);
+    margin: 0 auto;
+
     padding: 20px;  
     display: grid;
     grid-template-columns: repeat(3, 1fr);

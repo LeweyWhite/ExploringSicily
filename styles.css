@@ -14,44 +14,6 @@
     font-style: normal; /* Imposta lo stile del font a normale */
     font-variation-settings: "wdth" 100; /* Imposta la larghezza del font a 100 */
 }
-/* Contenuto Css navbar Non toccare */
-.navbar {
-    background-color: #af1919; /* Colore di sfondo della navbar */
-    height: 100px; /* Altezza della navbar */
-    display: flex; /* Usa il layout flexbox per la navbar */
-    align-items: center; /* Allinea gli elementi al centro verticalmente */
-    justify-content: center; /* Allinea gli elementi al centro orizzontalmente */
-    position: fixed; /* Fissa la navbar in alto alla pagina */                
-    top: 0;     /* Posiziona la navbar in alto */
-    left: 0; /* Posiziona la navbar a sinistra */
-    right: 0;   /* Posiziona la navbar a destra */
-    z-index: 1000;      /* Assicura che la navbar sia sopra altri elementi della pagina */
-} 
-
-
-.divpad {
-    padding-left: 2px; /* Aggiunge un padding a sinistra per allineare il contenuto */   
-    padding-top: 2px;   /* Aggiunge un padding in alto per allineare il contenuto */
-}
-
-
-.flexContainerNav {
-    display: flex; /* Usa il layout flexbox per la navbar */
-    width: 100%; /* Larghezza della navbar */
-    align-items: center; /* Allinea gli elementi al centro verticalmente */
-    justify-content: space-between; /* Spazia gli elementi in modo che ci sia spazio tra di loro */
-    padding: 0 20px; /* Padding orizzontale per la navbar */
-    position: fixed; /* Fissa la navbar in alto alla pagina */
-}
-
-
-.nav-logo {
-    position: absolute; /* Posiziona il logo in modo assoluto */
-    left: 50%; /* Centra il logo orizzontalmente */
-    transform: translateX(-50%); /* Sposta il logo indietro della metà della sua larghezza per centrarlo */
-}
-
-/* Contenuto Css navbar Non toccare */
 
 /* Importazione font */
 
