@@ -2,7 +2,7 @@
 <head> 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="stylesNav.css">
-    <script src="script.js"></script>
+    <script src="scriptNav.js"></script>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 </head>
 
@@ -60,34 +60,6 @@
 
 
 <script>
-  // Script per gestire l'apertura e la chiusura della barra laterale
-  document.addEventListener("DOMContentLoaded", function() {
-    const sidebar = document.getElementById("Sidebar"); // Barra laterale
-    const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
-    let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
-
-    // Funzione per aprire la barra laterale
-    function openSidebar() {
-      sidebar.style.display = "block";
-      menuToggle.src = "img/close.png"; // Usa la tua icona X
-      sidebarOpen = true;
-    }
-
-    // Funzione per chiudere la barra laterale
-    function closeSidebar() {
-      sidebar.style.display = "none";
-      menuToggle.src = "img/hamburger.png";
-      sidebarOpen = false;
-    }
-
-    // Gestore di eventi per il click sull'icona del menu
-    menuToggle.addEventListener("click", function() {
-      if (sidebarOpen) {
-        closeSidebar();
-      } else {
-        openSidebar();
-      }
-    });
 
 const ip = "http://127.0.0.1:5001/";
 
@@ -108,7 +80,7 @@ async function getUserName() {
         console.error('Errore nel recupero dati utente:', error);
     }
 }
-getUserName(); 
-  });
+getUserName(); // <-- CHIAMA LA FUNZIONE QUI
+ 
     
 </script>

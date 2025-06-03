@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explore Sicily</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stylesNav.css">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   <html lang="en-US">
   <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
   <meta name="theme-color" content="#c50000"> <!-- Colore del tema per i browser compatibili -->
- 
+  <script src="scriptNav.js"></script>
     
     
 </head>
@@ -17,6 +18,25 @@
 <body>
 
   <div id="navbar"></div>
+  
+<aside>
+    <div class="mySidebar" id="Sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="CultAgrigento.html">Agrigento</a></li>
+            <li><a href="CultCatania.html">Catania</a></li>
+            <li><a href="CultMessina.html">Messina</a></li>
+            <li><a href="CultPalermo.html">Palermo</a></li>
+            <li><a href="CultRagusa.html">Ragusa</a></li>
+            <li><a href="CultSiracusa.html">Siracusa</a></li>
+            <li><a href="CultTrapani.html">Trapani</a></li>
+        </ul>
+    </div>
+</aside>
+
   
   <img src="img\banner.png" alt="Sicily Banner" class="banner">
   
@@ -351,6 +371,7 @@
   
 
 </body>
+<script src="scriptNav.js"></script>
 
 
 </html>
@@ -362,8 +383,36 @@
     .then(data => {
       document.getElementById('navbar').innerHTML = data;
     });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const sidebar = document.getElementById("Sidebar"); // Barra laterale
+    const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
+    let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
+  
+    function openSidebar() { // Funzione per aprire la barra laterale
+      sidebar.style.display = "block"; // Mostra la barra laterale
+      menuToggle.src = "img/close.png"; // Usa la tua icona X
+      sidebarOpen = true; // Imposta lo stato della barra laterale come aperta
+    }
+  
+    function closeSidebar() { // Funzione per chiudere la barra laterale
+      sidebar.style.display = "none"; // Nascondi la barra laterale
+      menuToggle.src = "img/hamburger.png"; // Torna all'icona del menu hamburger
+      sidebarOpen = false; // Imposta lo stato della barra laterale come chiusa
+    }
+  
+    if (menuToggle) {
+      menuToggle.addEventListener("click", function() { // Aggiungi un gestore di eventi per il click sull'icona del menu
+        if (sidebarOpen) { // Se la barra laterale è aperta
+          closeSidebar();   // Chiudi la barra laterale
+        } else { // Se la barra laterale è chiusa
+          openSidebar(); // Apri la barra laterale
+        } 
+      });
+    }
+  });
+
 </script>
-<script src="script.js"></script>
 
 
 
