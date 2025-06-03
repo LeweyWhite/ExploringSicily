@@ -29,11 +29,11 @@
 
 
 
-<nav class="navbar">
-    <div class="flexContainerNav">
-        <div class="nav-icon">
-            <img id="menu-toggle" src="img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;">
-        </div>
+<nav class="navbar"> <!-- Barra di navigazione -->
+    <div class="flexContainerNav"> <!-- Contenitore flessibile per la barra di navigazione -->
+        <div class="nav-icon"> <!-- Icona del menu hamburger -->
+            <img id="menu-toggle" src="img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;"> <!-- Icona del menu hamburger -->
+        </div> 
 
         <div class="nav-logo">
             <img src="img/logo.png"  style="height: 100px; width: 100px;">
@@ -89,33 +89,9 @@
       }
     });
 
-    // --- Funzione per mostrare il nome utente (corretta) ---
-    let ip = "http://127.0.0.1:5001"; // Imposta l'IP del server
 
-    async function nomeUser(user) {
-      try {
-        const response = await get(ip + '/api', {
-          method: 'GET',
-          data: {
-            "user": user,
-          }
-        });
-
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-
-        const data = await response.json();
-        document.getElementById('welcome-message').textContent = `Benvenuto, ${data.user}`;
-        console.log(data.user);
-      } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-      }
-    }
-
-    // Esempio di chiamata (decommenta e passa il nome utente se necessario)
-    // nomeUser("nomeUtente");
-  });
+    
+    
 </script>
 
 
