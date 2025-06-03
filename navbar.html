@@ -39,7 +39,7 @@
             <img src="img/logo.png"  style="height: 100px; width: 100px;">
         </div>
         <div style="flex-grow: 1; text-align: right; color: white;">
-            <h1 id="welcome-message">Benvenuto!</h1>
+            <h1 id="usernameUtente">welcome!</h1>
         </div>
 
 
@@ -89,9 +89,26 @@
       }
     });
 
+const ip = "http://127.0.0.1:5001/";
 
-    
+async function getUserName() {
+    try {
+        const response = await fetch(ip + 'api/get_visited_places_count', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        const data = await response.json();
+        const username = data.username; 
+     
+        document.getElementById('usernameUtente').textContent =  username;
+        console.log('Username:', username);  
+    } catch (error) {
+        console.error('Errore nel recupero dati utente:', error);
+    }
+}
+getUserName(); 
+  });
     
 </script>
-
-

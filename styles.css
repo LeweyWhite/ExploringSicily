@@ -27,8 +27,7 @@
 .banner {
     display: flex; /* Usa il layout flexbox per il banner */
     position: relative; /* Posizione relativa per posizionare gli elementi all'interno del banner */  
-    top: 100px; /* Sposta il banner sotto la navbar */
-    
+    top: 100px; /* Sposta il banner sotto la navbar */   
     background-image: url('img/banner.jpg'); /* Immagine di sfondo del banner */    
     background-size: cover; /* Copre l'intera area del banner */
     background-position: center; /* Centra l'immagine di sfondo */  

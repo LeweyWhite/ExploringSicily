@@ -93,21 +93,31 @@ period, such as chiacchiere and cassate.
   
 <script>
 // Carica il contenuto del file navbar.html e lo inserisce nell'elemento con id "navbar"
-  fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
+  fetch('navbar.html') // Assicurati che il percorso sia corretto rispetto alla posizione del file HTML
+    .then(response => response.text()) // Ottieni il testo del file
+    .then(data => { // Inserisci il contenuto nel div con id "navbar"
+      document.getElementById('navbar').innerHTML = data; // Inserisci il contenuto nel div con id "navbar"
     });
+
+
+// Aggiungi un evento di click per aprire la lightbox
+const images = document.querySelectorAll('.immagine');
+images.forEach(image => {
+  image.addEventListener('click', () => {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = lightbox.querySelector('img');
+    lightboxImage.src = image.src;
+    lightbox.style.display = 'block';
+  });
+});
+
+
+
 </script>
-
-
-</body>
-
-
-
-
 <script src="galleryscript.js"></script>
 <script src="faqScript.js"></script>
+
+</body>
 </html>
 
 

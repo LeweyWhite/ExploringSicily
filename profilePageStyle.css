@@ -1,0 +1,79 @@
+* {
+    margin: 0; /* Rimuove i margini di tutti gli elementi */
+    padding: 0; /* Rimuove il padding di tutti gli elementi */
+    box-sizing: border-box; /* Imposta il box-sizing per includere padding e bordi nella larghezza e altezza degli elementi */
+}
+
+
+
+.profile-container{
+    background-color: rgb(255, 255, 255); /* Imposta il colore di sfondo del main */
+    height: auto;
+    position: static;
+    top:200px;
+    width: 100%; /* Imposta la larghezza del main al 100% */
+    height: 100vh; /* Imposta l'altezza del main al 100% della viewport */
+    display: flex; /* Utilizza il flexbox per il layout */
+    background-image: url('https://www.citalia.com/-/media/Bynder/Citalia-non-geography/Blogs/citalias-guide-to-sicily/sicily-blog-300273-2022-Taormina-Sicily-Hybris.jpg?rev=8991e7fb4f514e2caad3ab7a815bd069&hash=065E4B318F2E7A533994ED44031D632E&h=480.375&w=1081.5'); /* Imposta l'immagine di sfondo */
+    align-items: center; /* Allinea gli elementi al centro orizzontalmente */   
+    justify-content: center; /* Allinea gli elementi al centro verticalmente */
+    padding: 20px; /* Aggiunge un padding di 20px */
+    z-index: 1;
+}
+
+.profile-header {
+    width: 100%; /* Imposta la larghezza dell'header al 100% */
+    height: 600px; /* Imposta l'altezza dell'header a 60px */
+    background: transparent; /* Rende lo sfondo dell'header trasparente */
+    backdrop-filter: blur(10px); /* Applica un effetto di sfocatura allo sfondo dell'header */
+    border-radius: 10px; /* Aggiunge un bordo arrotondato all'header */
+    border-color: white; /* Imposta il colore del bordo dell'header */
+    border-style: solid; /* Imposta lo stile del bordo dell'header come solido */   
+    border-width: 1px; /* Imposta lo spessore del bordo dell'header a 1px */
+    display: flex; /* Utilizza il flexbox per il layout dell'header */
+    align-items: center; /* Allinea gli elementi al centro verticalmente */
+    padding: 0 20px; /* Aggiunge un padding orizzontale di 20px */
+}
+
+.profile-picture {
+    width: 400px; /* Imposta la larghezza dell'immagine del profilo */
+    height: 500px; /* Imposta l'altezza dell'immagine del profilo */
+    border-radius: 10%; /* Rende l'immagine del profilo circolare */
+    margin-right: 20px; /* Aggiunge uno spazio a destra dell'immagine del profilo */
+    object-fit: cover; /* Rende l'immagine del profilo coprente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra all'immagine del profilo */
+}
+
+.profile-header-content {
+    flex: 1; /* Permette al contenuto di occupare lo spazio rimanente */
+    color: white; /* Imposta il colore del testo a bianco */
+    font-family: 'Arial', sans-serif; /* Imposta il font del testo */
+    font-size: 24px; /* Imposta la dimensione del font */
+    line-height: 1.5; /* Imposta l'interlinea del testo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Aggiunge un'ombra al testo per migliorare la leggibilità */
+    display: flex; /* Utilizza il flexbox per il layout del contenuto dell'header */
+    flex-direction: column; /* Imposta la direzione del layout in colonna */    
+    justify-content: center; /* Allinea gli elementi al centro verticalmente */
+    align-items: flex-start; /* Allinea gli elementi all'inizio del contenitore */
+    padding: 20px; /* Aggiunge un padding di 20px */        
+
+}
+
+button{
+    background-color: #1a1818; /* Colore di sfondo del pulsante */
+    color: white; /* Colore del testo del pulsante */
+    padding: 10px 20px; /* Padding interno del pulsante */
+    border: none; /* Rimuove il bordo predefinito */
+    border-radius: 5px; /* Aggiunge angoli arrotondati al pulsante */
+    cursor: pointer; /* Cambia il cursore quando si passa sopra il pulsante */
+    font-size: 16px; /* Dimensione del font del testo del pulsante */
+    margin-top: 20px; /* Spazio sopra il pulsante */
+}
+
+button:hover {
+    background-color: #333; /* Colore di sfondo del pulsante al passaggio del mouse */
+}
+
+button:active {
+    background-color: #918a8a; /* Colore di sfondo del pulsante quando viene cliccato */
+}
