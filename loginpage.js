@@ -23,7 +23,7 @@ async function login() {
             let email = data.response.email;
             resultElements.innerHTML = "<p style='color:green'>Welcome: "; + user + "</p>";
             console.log("Login successful for user: " + user);
-            window.location.href = "index.html"; // Change to your home page URL
+            window.location.href = "index.html"; 
 
             
         } else {

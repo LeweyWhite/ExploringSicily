@@ -1,0 +1,89 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Contenitore principale */
+  .container {
+    background-color: rgb(255, 255, 255);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Titolo */
+  .container h1 {
+    margin-bottom: 25px;
+    color: #a32020;
+    font-size: 45px;
+    font-family:Arial, Helvetica, sans-serif
+  }
+  
+  /* Gruppo di input */
+  .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+  
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #a32020;
+    font-weight: bold;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #a32020;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+
+  }
+  
+  .input-field:focus {
+    border-color: #a32020;
+    outline: none;
+  }
+  
+  /* Bottone */
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #a32020;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #da1919;
+  }
+  
+  /* Messaggio di risultato */
+  #resultElement {
+    margin-top: 15px;
+    font-size: 14px;
+    color: red;
+  }
+  
