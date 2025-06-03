@@ -38,6 +38,10 @@
         <div class="nav-logo">
             <img src="img/logo.png"  style="height: 100px; width: 100px;">
         </div>
+        <div style="flex-grow: 1; text-align: right; color: white;">
+            <h1 id="welcome-message">Benvenuto!</h1>
+        </div>
+
 
         <div class="nav-icon">      
             <img src="img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='login.html'">
@@ -56,28 +60,61 @@
 
 
 <script>
-  const sidebar = document.getElementById("Sidebar"); // Barra laterale
-  const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
-  let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
+  // Script per gestire l'apertura e la chiusura della barra laterale
+  document.addEventListener("DOMContentLoaded", function() {
+    const sidebar = document.getElementById("Sidebar"); // Barra laterale
+    const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
+    let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
 
-  function openSidebar() { // Funzione per aprire la barra laterale
-    sidebar.style.display = "block"; // Mostra la barra laterale
-    menuToggle.src = "img/close.png"; // Usa la tua icona X
-    sidebarOpen = true; // Imposta lo stato della barra laterale come aperta
-  }
+    // Funzione per aprire la barra laterale
+    function openSidebar() {
+      sidebar.style.display = "block";
+      menuToggle.src = "img/close.png"; // Usa la tua icona X
+      sidebarOpen = true;
+    }
 
-  function closeSidebar() { // Funzione per chiudere la barra laterale
-    sidebar.style.display = "none"; // Nascondi la barra laterale
-    menuToggle.src = "img/hamburger.png"; // Torna all'icona del menu hamburger
-    sidebarOpen = false; // Imposta lo stato della barra laterale come chiusa
-  }
+    // Funzione per chiudere la barra laterale
+    function closeSidebar() {
+      sidebar.style.display = "none";
+      menuToggle.src = "img/hamburger.png";
+      sidebarOpen = false;
+    }
 
-  menuToggle.addEventListener("click", function() { // Aggiungi un gestore di eventi per il click sull'icona del menu
-    if (sidebarOpen) { // Se la barra laterale è aperta
-      closeSidebar();   // Chiudi la barra laterale
-    } else { // Se la barra laterale è chiusa
-      openSidebar(); // Apri la barra laterale
-    } 
+    // Gestore di eventi per il click sull'icona del menu
+    menuToggle.addEventListener("click", function() {
+      if (sidebarOpen) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+    });
+
+    // --- Funzione per mostrare il nome utente (corretta) ---
+    let ip = "http://127.0.0.1:5001"; // Imposta l'IP del server
+
+    async function nomeUser(user) {
+      try {
+        const response = await get(ip + '/api', {
+          method: 'GET',
+          data: {
+            "user": user,
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+        document.getElementById('welcome-message').textContent = `Benvenuto, ${data.user}`;
+        console.log(data.user);
+      } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+      }
+    }
+
+    // Esempio di chiamata (decommenta e passa il nome utente se necessario)
+    // nomeUser("nomeUtente");
   });
 </script>
 

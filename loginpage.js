@@ -21,11 +21,15 @@ async function login() {
         if (data.response.user) {
             let user = data.response.user;
             let email = data.response.email;
- 
             resultElements.innerHTML = "<p style='color:green'>Welcome: "; + user + "</p>";
+            console.log("Login successful for user: " + user);
+            window.location.href = "index.html"; // Change to your home page URL
+
+            
         } else {
             console.log("not ok");
             resultElements.innerHTML = "<p style='color:red'>" + data.response.error + "</p>";
+            console.log("Login failed: " + data.response.error);
         }
     } catch(error) {
         console.error('Error:', error);
