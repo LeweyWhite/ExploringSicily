@@ -45,7 +45,7 @@
     width: 300px; /* Larghezza della sidebar */
     height: calc(100vh); /* Altezza della sidebar, sottraendo l'altezza della navbar */
     background-color: #e92c13; /* Colore di sfondo della sidebar */
-    z-index: 10; /* Assicura che la sidebar sia sopra altri elementi della pagina */
+    z-index: 100; /* Assicura che la sidebar sia sopra altri elementi della pagina */
     animation: mySidebarAnimation 0.3s ease-in-out; /* Aggiunge un'animazione per l'espansione della sidebar */
 
 }

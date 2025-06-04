@@ -1,6 +1,7 @@
 
 
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() { // Assicurati che il DOM sia completamente caricato prima di eseguire il codice
+    // Inizializza le variabili per la barra laterale e l'icona del menu
     const sidebar = document.getElementById("Sidebar"); // Barra laterale
     const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
     let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
