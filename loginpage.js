@@ -21,9 +21,13 @@ async function login() {
         if (data.response.user) {
             let user = data.response.user;
             let email = data.response.email;
+            localStorage.setItem('username', user); //AGGIUNTA PROFESSORE
+            localStorage.setItem('email', email); //AGGIUNTA PROFESSORE
+            console.log("User: " + user + ", Email: " + email);
+    
             resultElements.innerHTML = "<p style='color:green'>Welcome: "; + user + "</p>";
             console.log("Login successful for user: " + user);
-            window.location.href = "index.html"; 
+            window.location.href = "profilePage.html"; 
 
             
         } else {

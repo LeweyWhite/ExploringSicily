@@ -60,7 +60,7 @@
 }
 
 button{
-    background-color: #1a1818; /* Colore di sfondo del pulsante */
+    background-color: #0A84FF; /* Colore di sfondo del pulsante */
     color: white; /* Colore del testo del pulsante */
     padding: 10px 20px; /* Padding interno del pulsante */
     border: none; /* Rimuove il bordo predefinito */
@@ -71,9 +71,10 @@ button{
 }
 
 button:hover {
-    background-color: #333; /* Colore di sfondo del pulsante al passaggio del mouse */
+    background-color: #0aadff /* Colore di sfondo del pulsante al passaggio del mouse */
 }
 
 button:active {
-    background-color: #918a8a; /* Colore di sfondo del pulsante quando viene cliccato */
+    background-color: #0657a8; /* Colore di sfondo del pulsante quando viene cliccato */
+    color: gray; /* Colore del testo del pulsante quando viene cliccato */
 }

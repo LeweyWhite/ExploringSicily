@@ -10,7 +10,7 @@
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   <html lang="en-US">
   <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
-  <meta name="theme-color" content="#c50000"> <!-- Colore del tema per i browser compatibili -->
+  <meta name="theme-color" content="red"> <!-- Colore del tema per i browser compatibili -->
   <script src="scriptNav.js"></script>
 </head>
 
@@ -439,7 +439,52 @@
       });
     }
   });
-</script>
 
+ 
+const ip = "http://127.0.0.1:5001/"; // Imposta l'IP del server
+
+async function getUserData() {
+    try {
+        const response = await fetch(ip + 'api/news', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        const data = await response.json();
+        const username = data.username;
+        const email = data.email;
+        document.getElementById('usernameUtente').textContent = 'Welcome back '  +'@' + username;
+        document.getElementById('emailUtente').textContent = 'Email: ' + email;
+    } catch (error) {
+        console.error('Errore nel recupero dati utente:', error);
+    }
+
+     try {
+        const response = await fetch(ip + 'api/faq', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        const data = await response.json();
+        const firstName = data.first_name || '';
+        const lastName = data.last_name || '';
+        document.getElementById('first_name').textContent = `${firstName} ${lastName}`;
+        document.getElementById('emailUtente').textContent = 'Email: ' + (email || '');
+    } catch (error) {
+        console.error('Errore nel recupero dati utente:', error);
+    }
+}
+
+
+
+if (localStorage.getItem("username")) {
+    document.getElementById("usernameUtente").textContent = "Welcome back " + localStorage.getItem("username");
+} else {
+    document.getElementById("usernameUtente").textContent = "Welcome!";
+}
+
+</script>
 
 

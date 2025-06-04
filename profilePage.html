@@ -42,39 +42,18 @@
 
 const ip = "http://127.0.0.1:5001/";
 
-async function getUserData() {
-    try {
-        const response = await fetch(ip + 'api/news', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        });
-        const data = await response.json();
-        const username = data.username;
-        const email = data.email;
-        document.getElementById('usernameUtente').textContent = '@' + username;
-        document.getElementById('emailUtente').textContent = 'Email: ' + email;
-    } catch (error) {
-        console.error('Errore nel recupero dati utente:', error);
-    }
-
-     try {
-        const response = await fetch(ip + 'api/faq', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        });
-        const data = await response.json();
-        const firstName = data.first_name || '';
-        const lastName = data.last_name || '';
-        document.getElementById('first_name').textContent = `${firstName} ${lastName}`;
-        document.getElementById('emailUtente').textContent = 'Email: ' + (email || '');
-    } catch (error) {
-        console.error('Errore nel recupero dati utente:', error);
-    }
+if (localStorage.getItem("username")) {
+    document.getElementById("usernameUtente").textContent = "Welcome back " + localStorage.getItem("username");
+} else {
+    document.getElementById("usernameUtente").textContent = "Welcome!";
 }
+
+if (localStorage.getItem("email")) {
+    document.getElementById("emailUtente").textContent = localStorage.getItem("email");
+} else {
+    document.getElementById("usernameUtente").textContent = "Welcome!";
+}
+
 
 getUserData();
 </script>
