@@ -1,0 +1,118 @@
+/* Contenuto Css navbar Non toccare */
+.navbar {
+    background-color: #af1919; /* Colore di sfondo della navbar */
+    height: 100px; /* Altezza della navbar */
+    display: flex; /* Usa il layout flexbox per la navbar */
+    align-items: center; /* Allinea gli elementi al centro verticalmente */
+    justify-content: center; /* Allinea gli elementi al centro orizzontalmente */
+    position: fixed; /* Fissa la navbar in alto alla pagina */                
+    top: 0;     /* Posiziona la navbar in alto */
+    left: 0; /* Posiziona la navbar a sinistra */
+    right: 0;   /* Posiziona la navbar a destra */
+    z-index: 1;      /* Assicura che la navbar sia sopra altri elementi della pagina */
+} 
+
+
+.divpad {
+    padding-left: 2px; /* Aggiunge un padding a sinistra per allineare il contenuto */   
+    padding-top: 2px;   /* Aggiunge un padding in alto per allineare il contenuto */
+}
+
+
+.flexContainerNav {
+    display: flex; /* Usa il layout flexbox per la navbar */
+    width: 100%; /* Larghezza della navbar */
+    align-items: center; /* Allinea gli elementi al centro verticalmente */
+    justify-content: space-between; /* Spazia gli elementi in modo che ci sia spazio tra di loro */
+    padding: 0 20px; /* Padding orizzontale per la navbar */
+    position: fixed; /* Fissa la navbar in alto alla pagina */
+}
+
+
+.nav-logo {
+    position: absolute; /* Posiziona il logo in modo assoluto */
+    left: 50%; /* Centra il logo orizzontalmente */
+    transform: translateX(-50%); /* Sposta il logo indietro della metà della sua larghezza per centrarlo */
+}
+
+/* Contenuto Css navbar Non toccare */
+
+.mySidebar {
+    position: fixed; /* Fissa la sidebar in alto a sinistra */
+    display: none; /* Nasconde la sidebar di default */
+    top: 100px; /* Posiziona la sidebar sotto la navbar */
+    left: 0; /* Posiziona la sidebar a sinistra */
+    width: 300px; /* Larghezza della sidebar */
+    height: calc(100vh); /* Altezza della sidebar, sottraendo l'altezza della navbar */
+    background-color: #e92c13; /* Colore di sfondo della sidebar */
+    z-index: 100; /* Assicura che la sidebar sia sopra altri elementi della pagina */
+    animation: mySidebarAnimation 0.3s ease-in-out; /* Aggiunge un'animazione per l'espansione della sidebar */
+
+}
+
+@keyframes mySidebarAnimation {
+    /* Animazione per espandere la sidebar */
+    from {
+        width: 0; /* Inizia con larghezza 0 */
+    }
+    to {
+        width: 300px; /* Espande la sidebar alla larghezza completa */
+    }
+    
+}
+
+.mySidebar h2 {
+    display: block; /* Rende i link della sidebar blocchi */
+    color: white; /* Colore del testo dei link */
+    padding: 10px; /* Padding per i link */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    font-size: 18px; /* Dimensione del font per i link */
+    transition: background-color 0.3s; /* Aggiunge una transizione per il colore di sfondo */
+    border-bottom: 1px solid #ddd; /* Aggiunge una linea di separazione tra i link */
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza totale */
+    font-family: Arial, sans-serif; /* Imposta il font per i link */    
+    align-self: center; /* Centra i link all'interno della sidebar */
+    width: 100%; /* Larghezza dei link per occupare tutta la sidebar */
+    text-align: center; /* Centra il testo dei link */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera ai link */
+    border-radius: 5px; /* Aggiunge angoli arrotondati ai link */
+    margin: 5px 0; /* Aggiunge margine verticale tra i link */
+    animation: mySidebarAnimation 0.3s ease-in-out; /* Aggiunge un'animazione per l'espansione della sidebar */
+}
+.mySidebar a {
+    display: block; /* Rende i link della sidebar blocchi */
+    color: white; /* Colore del testo dei link */
+    padding: 10px; /* Padding per i link */
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    font-size: 18px; /* Dimensione del font per i link */
+    transition: background-color 0.3s; /* Aggiunge una transizione per il colore di sfondo */
+    border-bottom: 1px solid #ddd; /* Aggiunge una linea di separazione tra i link */
+    box-sizing: border-box; /* Assicura che il padding non influisca sulla larghezza totale */
+    font-family: Arial, sans-serif; /* Imposta il font per i link */    
+    align-self: center; /* Centra i link all'interno della sidebar */
+    width: 100%; /* Larghezza dei link per occupare tutta la sidebar */
+    text-align: center; /* Centra il testo dei link */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Aggiunge un'ombra leggera ai link */
+    border-radius: 5px; /* Aggiunge angoli arrotondati ai link */
+    margin: 5px 0; /* Aggiunge margine verticale tra i link */
+    animation: mySidebarAnimation 0.3s ease-in-out; /* Aggiunge un'animazione per l'espansione della sidebar */
+}
+
+.mySidebar a:hover {
+    background-color: #0c0e0c; /* Colore di sfondo al passaggio del mouse sui link */
+}
+.mySidebar a.active {
+    background-color: #3f0e8d; /* Colore di sfondo per il link attivo */
+}
+.mySidebar .closebtn {
+    position: absolute; /* Posiziona il pulsante di chiusura in modo assoluto */
+    top: 10px; /* Posiziona il pulsante di chiusura in alto */
+    right: 20px; /* Posiziona il pulsante di chiusura a destra */
+    font-size: 30px; /* Dimensione del font per il pulsante di chiusura */
+    color: white; /* Colore del testo del pulsante di chiusura */
+}
+.mySidebar .closebtn:hover {
+    color: #f1f1f1; /* Colore del testo al passaggio del mouse sul pulsante di chiusura */
+}
+
+

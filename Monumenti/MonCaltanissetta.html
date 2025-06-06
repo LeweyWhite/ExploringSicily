@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Catania's Monuments</title>
+        <link rel="stylesheet" href="../CSS/stilePagine.css">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link rel="stylesheet" href="../CSS/stylesNav.css">
+        <script src="../JS/galleryscript.js" defer></script> <!--Script per la galleria di immagini, defer per caricarlo dopo il caricamento del DOM--> 
+        <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
+                <script src="../JS/scriptName.js" defer></script>
+  </head> 
+
+     
+  <body>
+    <nav class="navbar"> <!-- Barra di navigazione -->
+      <div class="flexContainerNav"> <!-- Contenitore flessibile per la barra di navigazione -->
+          <div class="nav-icon"> <!-- Icona del menu hamburger -->
+              <img id="menu-toggle" src="../img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;"> <!-- Icona del menu hamburger -->
+          </div> 
+
+          <div class="nav-logo">
+              <img src="../img/logo.png"  style="height: 100px; width: 100px;">
+          </div>
+          <div style="flex-grow: 1; text-align: right; color: white;">
+              <h1 id="usernameProfile">welcome!</h1>
+          </div>
+
+
+          <div class="nav-icon">      
+              <img src="../img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='../login.html'">
+          </div>
+      </div>
+    </nav>
+
+    <aside> <!-- Barra laterale -->
+      <div class="mySidebar" id="Sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html"> <strong>⌂ Home</strong></a></li>
+            <li><a href="../Culture/CultAgrigento.html">Agrigento</a></li>
+            <li><a href="../Culture/CultCatania.html">Catania</a></li>
+            <li><a href="../Culture/CultMessina.html">Messina</a></li>
+            <li><a href="../Culture/CultPalermo.html">Palermo</a></li>
+            <li><a href="../Culture/CultRagusa.html">Ragusa</a></li>
+            <li><a href="../Culture/CultSiracusa.html">Siracusa</a></li>
+            <li><a href="../Culture/CultTrapani.html">Trapani</a></li>
+        </ul>
+      </div>
+   </aside>
+  
+  
+        <div class="immagine">
+            <img class="ragusaSfondo" src="">
+            <h1 class="Ragusa"> THE MONUMENTS OF CATANIA </h1>
+
+        </div>
+  </div>     
+
+        <p> </p>
+
+
+         <div class="galleria">
+            <img class="immagine" src="" alt="1">
+            <img class="immagine" src="">
+            <img class="immagine" src="">
+            <img class="immagine" src="">
+            <img class="immagine" src="">
+            <img class="immagine" src="">
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="ingrandita">
+  </div>
+
+  <div class="footerbar">
+    <div class="elementiFooterbar">
+      <ul>
+        <li><a href="https://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook</a></li>
+        <li><a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a></li>
+        <li><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">Youtube</a></li>
+        <li><a href="../contatti.html"><img src="https://cdn-icons-png.flaticon.com/512/2343/2343697.png" alt="contatti">Contact</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+  
+<script>
+ document.addEventListener("DOMContentLoaded", function() { // Assicurati che il DOM sia completamente caricato prima di eseguire il codice
+    const Sidebar = document.getElementById("Sidebar"); // Barra laterale
+    const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
+    let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
+  
+    function openSidebar() { // Funzione per aprire la barra laterale
+      Sidebar.style.display = "block"; // Mostra la barra laterale
+      menuToggle.src = "../img/close.png"; // Usa la tua icona X
+      sidebarOpen = true; // Imposta lo stato della barra laterale come aperta
+    }
+  
+    function closeSidebar() { // Funzione per chiudere la barra laterale
+      Sidebar.style.display = "none"; // Nascondi la barra laterale
+      menuToggle.src = "../img/hamburger.png"; // Torna all'icona del menu hamburger
+      sidebarOpen = false; // Imposta lo stato della barra laterale come chiusa
+    }
+  
+    if (menuToggle) {
+      menuToggle.addEventListener("click", function() { // Aggiungi un gestore di eventi per il click sull'icona del menu
+        if (sidebarOpen) { // Se la barra laterale è aperta
+          closeSidebar();   // Chiudi la barra laterale
+        } else { // Se la barra laterale è chiusa
+          openSidebar(); // Apri la barra laterale
+        } 
+      });
+    }
+  });
+
+  user_Name();
+</script>
+
+
+
+</body>
+
+
+
+
+
+
+
+    
+</html>
+
+
+
+<script src="galleryscript.js"></script>

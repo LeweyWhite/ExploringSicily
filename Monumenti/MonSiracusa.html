@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Siracusa's Monuments</title>
+        <link rel="stylesheet" href="../CSS/stilePagine.css">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link rel="stylesheet" href="../CSS/stylesNav.css">
+        <script src="../JS/galleryscript.js" defer></script> <!--Script per la galleria di immagini, defer per caricarlo dopo il caricamento del DOM--> 
+        <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
+        <script src="../JS/scriptName.js" defer></script>        
+  </head> 
+
+     
+  <body>
+    <nav class="navbar"> <!-- Barra di navigazione -->
+      <div class="flexContainerNav"> <!-- Contenitore flessibile per la barra di navigazione -->
+          <div class="nav-icon"> <!-- Icona del menu hamburger -->
+              <img id="menu-toggle" src="../img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;"> <!-- Icona del menu hamburger -->
+          </div> 
+
+          <div class="nav-logo">
+              <img src="../img/logo.png"  style="height: 100px; width: 100px;">
+          </div>
+          <div style="flex-grow: 1; text-align: right; color: white;">
+               <h1 id="usernameProfile">welcome!</h1>
+          </div>
+
+
+          <div class="nav-icon">      
+              <img src="../img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='../login.html'">
+          </div>
+      </div>
+    </nav>
+
+    <aside> <!-- Barra laterale -->
+      <div class="mySidebar" id="Sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html"> <strong>⌂ Home</strong></a></li>
+            <li><a href="../Culture/CultAgrigento.html">Agrigento</a></li>
+            <li><a href="../Culture/CultCatania.html">Catania</a></li>
+            <li><a href="../Culture/CultMessina.html">Messina</a></li>
+            <li><a href="../Culture/CultPalermo.html">Palermo</a></li>
+            <li><a href="../Culture/CultRagusa.html">Ragusa</a></li>
+            <li><a href="../Culture/CultSiracusa.html">Siracusa</a></li>
+            <li><a href="../Culture/CultTrapani.html">Trapani</a></li>
+        </ul>
+      </div>
+   </aside>
+  
+  
+        <div class="immagine">
+            <img class="ragusaSfondo" src="https://www.artribune.com/wp-content/uploads/2022/09/La-punta-di-Ortigia-con-il-castello-Maniace-di-Siracusa.-Photo-AndreaCT78-via-Flickr-_-Wikimedia-_10.jpg">
+            <h1 class="Ragusa"> THE MONUMENTS OF SIRACUSA </h1>
+
+        </div>
+  </div>     
+
+        <p> Syracuse, one of the most fascinating and historically rich cities in Sicily, is a true open-air museum, with every corner preserving the legacy of ancient civilizations. Founded by the Greeks in 734 BC, this city was for centuries one of the most powerful and influential centers of the Mediterranean. Its historical and cultural wealth is still visible in the many monuments that enrich its urban landscape—a perfect blend of classical heritage and Sicilian Baroque elegance.
+          At the heart of ancient Syracuse lies the Archaeological Park of Neapolis, a true treasure trove of history and beauty. Here stands the Greek Theatre, one of the largest and best-preserved ancient theaters in the world. Built in the 5th century BC, the theatre could accommodate up to 15,000 spectators and still hosts major cultural events today, such as the renowned Greek Theatre Festival. Next to the theatre, the Ear of Dionysius fascinates visitors with its extraordinary acoustics. According to legend, it was designed by the tyrant Dionysius I to eavesdrop on his prisoners’ conversations. The quarry, shaped like a human ear, offers a unique sensory experience where every sound is amplified in a remarkable way.
+          Syracuse is also famous for its stunning Cathedral, located on the beautiful island of Ortigia.<br> This architectural masterpiece is a perfect example of how the city has successfully merged Greek, Roman, and Baroque influences. The cathedral was built atop a Doric temple dedicated to Athena, and still contains ancient columns that tell the long history of the site. Strolling through Ortigia, you can discover picturesque and evocative corners, such as Castello Maniace, a medieval fortress standing at the tip of the island, overlooking the sea and offering breathtaking panoramic views of the city.
+          But Syracuse is not only about antiquity. <br> The city is also home to the Paolo Orsi Archaeological Museum, which hosts an extensive collection of artifacts that narrate the story of Syracuse—from its prehistoric beginnings to the Roman era—offering visitors a journey through time that deepens their understanding of this extraordinary city.
+          Every monument, every stone in Syracuse tells stories of ancient civilizations, of art, culture, and great battles. A city that was once a cradle of philosophy and politics, it remains today one of the most captivating destinations for those who wish to discover the true spirit of Sicily. Syracuse is not just a city to see, but a city to experience— a journey through the centuries that leaves every visitor with a unique and unforgettable emotion.
+          </p>
+
+
+         <div class="galleria">
+            <img class="immagine" src="https://www.laterrazzasulmare.com/wp-content/uploads/duomo-siracusa.jpg" alt="1">
+            <img class="immagine" src="https://www.artribune.com/wp-content/uploads/2022/09/La-chiesa-di-San-Giovanni-Evangelista-di-Siracusa.-Photo-Davide-Mauro-CC-BY-SA-2.5-via-Wikimedia-_2.jpg">
+            <img class="immagine" src="https://www.100viaggi.it/wp-content/uploads/2019/02/siracusa.jpg">
+            <img class="immagine" src="https://www.hermes-sicily.com/blog/images/stories/Hermes/monumenti/orecchio-dionisio-neapolis-siracusa.jpg">
+            <img class="immagine" src="https://www.smarteducationunescosicilia.it/wp-content/uploads/2019/10/32-1.jpg">
+            <img class="immagine" src="https://www.libertasicilia.it/cms/wp-content/uploads/2024/09/Siracusa-I-monumenti-aretusei-sfruttati-per-ospitare-mostre-che-fanno-lievitare-il-ticket-ghigliottina-jpg.jpg">
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="ingrandita">
+  </div>
+
+  <div class="footerbar">
+    <div class="elementiFooterbar">
+      <ul>
+        <li><a href="https://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook</a></li>
+        <li><a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a></li>
+        <li><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">Youtube</a></li>
+        <li><a href="../contatti.html"><img src="https://cdn-icons-png.flaticon.com/512/2343/2343697.png" alt="contatti">Contact</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+  
+
+<script>
+ document.addEventListener("DOMContentLoaded", function() { // Assicurati che il DOM sia completamente caricato prima di eseguire il codice
+    const Sidebar = document.getElementById("Sidebar"); // Barra laterale
+    const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
+    let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
+  
+    function openSidebar() { // Funzione per aprire la barra laterale
+      Sidebar.style.display = "block"; // Mostra la barra laterale
+      menuToggle.src = "../img/close.png"; // Usa la tua icona X
+      sidebarOpen = true; // Imposta lo stato della barra laterale come aperta
+    }
+  
+    function closeSidebar() { // Funzione per chiudere la barra laterale
+      Sidebar.style.display = "none"; // Nascondi la barra laterale
+      menuToggle.src = "../img/hamburger.png"; // Torna all'icona del menu hamburger
+      sidebarOpen = false; // Imposta lo stato della barra laterale come chiusa
+    }
+  
+    if (menuToggle) {
+      menuToggle.addEventListener("click", function() { // Aggiungi un gestore di eventi per il click sull'icona del menu
+        if (sidebarOpen) { // Se la barra laterale è aperta
+          closeSidebar();   // Chiudi la barra laterale
+        } else { // Se la barra laterale è chiusa
+          openSidebar(); // Apri la barra laterale
+        } 
+      });
+    }
+  });
+
+    user_Name();
+</script>
+
+<script src="galleryscript.js"></script>
+
+
+</body>
+
+
+
+
+
+
+
+    
+</html>
+

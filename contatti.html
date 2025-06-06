@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/contatti.css">
+    <link rel="stylesheet" href="CSS/stylesNav.css">
+    <script src="JS/scriptNav.js" defer></script>
+    <script src="JS/scriptName.js" defer></script>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+</head> 
+<body>
+    <nav class="navbar">
+        <div class="flexContainerNav">
+            <div class="nav-icon">
+                <img id="menu-toggle" src="img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;">
+            </div> 
+            <div class="nav-logo">
+                <img src="img/logo.png" style="height: 100px; width: 100px;">
+            </div>
+            <div style="flex-grow: 1; text-align: right; color: white;">
+                <h1 id="usernameNavbar">welcome!</h1>
+            </div>
+            <div class="nav-icon">      
+                <img src="img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='login.html'">
+            </div>
+        </div>
+    </nav>
+    
+    <aside> <!-- Barra laterale -->
+    <div class="mySidebar" id="Sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html"> <strong>⌂ Home</strong></a></li>
+            <li><a href="/Culture/CultAgrigento.html">Agrigento</a></li>
+            <li><a href="/Culture/CultCatania.html">Catania</a></li>
+            <li><a href="/Culture/CultMessina.html">Messina</a></li>
+            <li><a href="/Culture/CultPalermo.html">Palermo</a></li>
+            <li><a href="/culture/CultRagusa.html">Ragusa</a></li>
+            <li><a href="/Culture/CultSiracusa.html">Siracusa</a></li>
+            <li><a href="/Culture/CultTrapani.html">Trapani</a></li>
+        </ul>
+    </div>
+  </aside>
+
+
+        <div class="contact-container" style="position: relative; top: 100px;">
+            <div class="contact-header">
+                <h2>Contattaci</h2>
+                <p>Per qualsiasi informazione scrivici o passa a trovarci.</p>
+            </div>
+            <div class="contact-details">
+                <p><strong>📍 Indirizzo:</strong> Via Ernesto Basile 123, 90100 Palermo (PA)</p>
+                <p><strong>📞 Telefono:</strong> +39 091 000 0000</p>
+                <p><strong>✉️ Email:</strong> info@exploresicily.it</p>
+                <p><strong>🕒 Orari:</strong> Lun–Ven 9:00–18:00</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+          document.addEventListener("DOMContentLoaded", function() { // Assicurati che il DOM sia completamente caricato prima di eseguire il codice
+    const Sidebar = document.getElementById("Sidebar"); // Barra laterale
+    const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
+    let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
+  
+    function openSidebar() { // Funzione per aprire la barra laterale
+      Sidebar.style.display = "block"; // Mostra la barra laterale
+      menuToggle.src = "img/close.png"; // Usa la tua icona X
+      sidebarOpen = true; // Imposta lo stato della barra laterale come aperta
+    }
+  
+    function closeSidebar() { // Funzione per chiudere la barra laterale
+      Sidebar.style.display = "none"; // Nascondi la barra laterale
+      menuToggle.src = "img/hamburger.png"; // Torna all'icona del menu hamburger
+      sidebarOpen = false; // Imposta lo stato della barra laterale come chiusa
+    }
+  
+    if (menuToggle) {
+      menuToggle.addEventListener("click", function() { // Aggiungi un gestore di eventi per il click sull'icona del menu
+        if (sidebarOpen) { // Se la barra laterale è aperta
+          closeSidebar();   // Chiudi la barra laterale
+        } else { // Se la barra laterale è chiusa
+          openSidebar(); // Apri la barra laterale
+        } 
+      });
+    }
+  });
+        user_Name();
+        user_Email();
+    </script>
+</body>
+</html>

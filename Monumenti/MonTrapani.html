@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trapani's Monuments</title>
+        <link rel="stylesheet" href="../CSS/stilePagine.css">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link rel="stylesheet" href="../CSS/stylesNav.css">
+        <script src="../JS/galleryscript.js" defer></script> <!--Script per la galleria di immagini, defer per caricarlo dopo il caricamento del DOM--> 
+        <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
+        <script src="../JS/scriptName.js" defer></script>        
+  </head> 
+
+     
+  <body>
+    <nav class="navbar"> <!-- Barra di navigazione -->
+      <div class="flexContainerNav"> <!-- Contenitore flessibile per la barra di navigazione -->
+          <div class="nav-icon"> <!-- Icona del menu hamburger -->
+              <img id="menu-toggle" src="../img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;"> <!-- Icona del menu hamburger -->
+          </div> 
+
+          <div class="nav-logo">
+              <img src="../img/logo.png"  style="height: 100px; width: 100px;">
+          </div>
+          <div style="flex-grow: 1; text-align: right; color: white;">
+              <h1 id="usernameProfile">welcome!</h1>
+          </div>
+
+
+          <div class="nav-icon">      
+              <img src="../img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='../login.html'">
+          </div>
+      </div>
+    </nav>
+
+    <aside> <!-- Barra laterale -->
+      <div class="mySidebar" id="Sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html"> <strong>⌂ Home</strong></a></li>
+            <li><a href="../Culture/CultAgrigento.html">Agrigento</a></li>
+            <li><a href="../Culture/CultCatania.html">Catania</a></li>
+            <li><a href="../Culture/CultMessina.html">Messina</a></li>
+            <li><a href="../Culture/CultPalermo.html">Palermo</a></li>
+            <li><a href="../Culture/CultRagusa.html">Ragusa</a></li>
+            <li><a href="../Culture/CultSiracusa.html">Siracusa</a></li>
+            <li><a href="../Culture/CultTrapani.html">Trapani</a></li>
+        </ul>
+      </div>
+   </aside>
+  
+  
+        <div class="immagine">
+            <img class="ragusaSfondo" src="https://www.itregolfi.com/public/1655459741-chiese-trapani.jpg">
+            <h1 class="Ragusa"> THE MONUMENTS OF TRAPANI </h1>
+
+        </div>
+  </div>     
+
+        <p>Trapani, located on the western tip of Sicily, is a captivating city that offers a perfect blend of history, art, and breathtaking landscapes.Its streets echo the atmosphere of an ancient port, while also reflecting the many changes the city has undergone over the centuries, shaped by various dominations such as the Phoenician, Roman, Arab, and Norman.
+          One of Trapani’s main landmarks is the Cathedral of San Lorenzo, a magnificent example of Baroque architecture situated in the heart of the historic center. Built in the 14th century and renovated multiple times, the cathedral houses extraordinary works of art, including paintings and sculptures that enhance its charm.
+          In the center of Trapani stands the Castle of Erice, perched high on a mountain overlooking the city.<br> Built during the Norman period, the castle is one of the city’s most iconic symbols and offers an incredible panoramic view of the sea and the town below. Originally used for both defensive and religious purposes, today it is one of the area's top tourist attractions.
+          Another important monument is the Church of the Purgatory, renowned for housing the mysterious “Mysteries of Trapani”, statues that are carried in the traditional Holy Week procession. The church is one of the most beautiful Baroque buildings in the city and serves as a cultural and religious landmark for the community.
+          Trapani also features typical medieval architecture, visible in the district known as Le Vie del Sale, which stretches between ancient salt pans and old watchtowers. The city has a long tradition in salt production, and the Trapani salt pansremain a significant natural and tourist resource to this day.
+          Also worth a visit is the Agostino Pepoli Regional Museum, which hosts numerous archaeological artifacts and works of art, including ceramics, sculptures, and paintings that tell the story of the city and its territory. The museum is a must for anyone wanting to gain a deeper understanding of Trapani’s culture and traditions.
+          We cannot forget the Torre di Ligny, a historic watchtower located at the edge of the city. Built in 1671, the tower was designed to defend the coast from pirate attacks. Today, the Torre di Ligny houses a maritime museum that tells the story of the sea and the seafaring traditions of Trapani.
+          </p>
+
+
+         <div class="galleria">
+            <img class="immagine" src="https://www.hoteltizianotrapani.it/images/scopri-trapani/segesta2big.jpg" alt="1">
+            <img class="immagine" src="https://www.typicalsicily.it/wp-content/uploads/2015/07/Monumento-a-Trapani-Vittorio-Emanuele-II.jpg">
+            <img class="immagine" src="https://assets.gds.it/fileadmin/MULTIMEDIA/TRAPANI/315045_album/cattedrale_trapani.jpg">
+            <img class="immagine" src="https://www.trapanitravel.com/wp-content/uploads/2015/02/1195654.jpg">
+            <img class="immagine" src="https://www.esplorasicilia.com/wordpress/wp-content/uploads/2010/10/shutterstock_1151280764.jpg">
+            <img class="immagine" src="https://www.westofsicily.com/west-of-sicily/motivazioni/natura/parco-archeologico-selinunte/7403/image-thumb__7403__editorialGallery/Selinunte2.fc40cb5a.jpg">
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="ingrandita">
+  </div>
+
+  <div class="footerbar">
+    <div class="elementiFooterbar">
+      <ul>
+        <li><a href="https://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook</a></li>
+        <li><a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a></li>
+        <li><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">Youtube</a></li>
+        <li><a href="../contatti.html"><img src="https://cdn-icons-png.flaticon.com/512/2343/2343697.png" alt="contatti">Contact</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+  
+
+<script>
+ document.addEventListener("DOMContentLoaded", function() { // Assicurati che il DOM sia completamente caricato prima di eseguire il codice
+    const Sidebar = document.getElementById("Sidebar"); // Barra laterale
+    const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
+    let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
+  
+    function openSidebar() { // Funzione per aprire la barra laterale
+      Sidebar.style.display = "block"; // Mostra la barra laterale
+      menuToggle.src = "../img/close.png"; // Usa la tua icona X
+      sidebarOpen = true; // Imposta lo stato della barra laterale come aperta
+    }
+  
+    function closeSidebar() { // Funzione per chiudere la barra laterale
+      Sidebar.style.display = "none"; // Nascondi la barra laterale
+      menuToggle.src = "../img/hamburger.png"; // Torna all'icona del menu hamburger
+      sidebarOpen = false; // Imposta lo stato della barra laterale come chiusa
+    }
+  
+    if (menuToggle) {
+      menuToggle.addEventListener("click", function() { // Aggiungi un gestore di eventi per il click sull'icona del menu
+        if (sidebarOpen) { // Se la barra laterale è aperta
+          closeSidebar();   // Chiudi la barra laterale
+        } else { // Se la barra laterale è chiusa
+          openSidebar(); // Apri la barra laterale
+        } 
+      });
+    }
+  });
+  
+    user_Name();
+</script>
+
+
+</body>
+
+
+
+
+
+
+
+    
+</html>
+
+
+
+<script src="galleryscript.js"></script>

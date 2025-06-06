@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enna's Monuments</title>
+        <link rel="stylesheet" href="../CSS/stilePagine.css">
+        <link rel="stylesheet" href="../CSS/styles.css">
+        <link rel="stylesheet" href="../CSS/stylesNav.css">
+        <script src="../JS/galleryscript.js" defer></script> <!--Script per la galleria di immagini, defer per caricarlo dopo il caricamento del DOM--> 
+                <script src="../JS/scriptName.js" defer></script>
+  </head> 
+
+     
+  <body>
+    <nav class="navbar"> <!-- Barra di navigazione -->
+      <div class="flexContainerNav"> <!-- Contenitore flessibile per la barra di navigazione -->
+          <div class="nav-icon"> <!-- Icona del menu hamburger -->
+              <img id="menu-toggle" src="../img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;"> <!-- Icona del menu hamburger -->
+          </div> 
+
+          <div class="nav-logo">
+              <img src="../img/logo.png"  style="height: 100px; width: 100px;">
+          </div>
+          <div style="flex-grow: 1; text-align: right; color: white;">
+              <h1 id="usernameProfile">welcome!</h1>
+          </div>
+
+
+          <div class="nav-icon">      
+              <img src="../img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='../login.html'">
+          </div>
+      </div>
+    </nav>
+
+    <aside> <!-- Barra laterale -->
+      <div class="mySidebar" id="Sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html"> <strong>⌂ Home</strong></a></li>
+            <li><a href="../Culture/CultAgrigento.html">Agrigento</a></li>
+            <li><a href="../Culture/CultCatania.html">Catania</a></li>
+            <li><a href="../Culture/CultMessina.html">Messina</a></li>
+            <li><a href="../Culture/CultPalermo.html">Palermo</a></li>
+            <li><a href="../Culture/CultRagusa.html">Ragusa</a></li>
+            <li><a href="../Culture/CultSiracusa.html">Siracusa</a></li>
+            <li><a href="../Culture/CultTrapani.html">Trapani</a></li>
+        </ul>
+      </div>
+   </aside>
+  
+  
+        <div class="immagine">
+            <img class="ragusaSfondo" src="https://www.bbacasadeinonni.com/media/k2/items/cache/2ff2ba0051687eef5ca0459cf942940c_L.jpg">
+            <h1 class="Ragusa"> THE MONUMENTS OF ENNA </h1>
+
+        </div>
+  </div>     
+
+        <p> Enna, the city in the heart of Sicily, is a true treasure chest of history, art, and breathtaking views. This charming urban center rises on a hill, and its Castello di Lombardia is one of the most imposing and evocative monuments on the island. This medieval fortress, which once protected the city, is a genuine symbol of the power of past centuries. Walking among its towers and walls, one can enjoy a spectacular panoramic view that stretches for miles over the Sicilian valleys, offering a unique experience.
+          <br> The Cathedral of Santa Maria Assunta, with its Baroque splendor, represents the spiritual heart of the city. It holds a unique architectural beauty that captivates visitors with its elegant lines and historical significance, dating back to the 11th century. But Enna is not only about churches and castles: the Church of San Giovanni Battista, located in the upper part of the city, is a gem of medieval architecture, adorned with frescoes and decorations that tell centuries of religious traditions.
+          Another treasure of Enna is the Tower of Frederick II, built during the reign of the Swabian emperor—a site that not only fascinates with its grandeur but also offers one of the most striking views in all of Sicily. And for history enthusiasts, the Regional Archaeological Museum of Enna is an unmissable stop. Here, you’ll find artifacts from ancient civilizations—Greek, Roman, and Punic—that recount the rich past of the region.
+          One cannot leave Enna without stopping at the Belvedere of Enna, located in Piazza Europa, from where you can admire one of the most spectacular panoramas of central Sicily, with your gaze stretching over the surrounding mountains and valleys. Enna is a city that knows how to move and enchant, with its fascinating history, impressive monuments, and awe-inspiring landscapes. Every corner of the city tells a story; every stone is a witness to the glorious past of this city, which deserves to be experienced and discovered in every detail.
+          </p>
+
+
+         <div class="galleria">
+            <img class="immagine" src="https://www.typicalsicily.it/wp-content/uploads/2017/03/Comune-della-Sicilia-Enna-Castello-Lombardia.jpg" alt="1">
+            <img class="immagine" src="https://custonaciweb.it/wp-content/uploads/2024/05/Duomo-di-Enna-Foto-di-katatonia82-depositphotos.com-CAo-960x504.jpg">
+            <img class="immagine" src="https://www.vivienna.it/wp-content/uploads/sites/8/2016/08/enna-Torre-di-Federico-notte.jpg">
+            <img class="immagine" src="https://www.esplorasicilia.com/wordpress/wp-content/uploads/2010/12/Chiesa-Sacramento-a-Centuripe-Enna-shutterstock_1629018256.jpg">
+            <img class="immagine" src="https://custonaciweb.it/wp-content/uploads/2022/03/Granfonte-di-Leonforte-Foto-di-Lucky-Team-Studio-Shutterstock-780x470.jpg">
+            <img class="immagine" src="https://lh3.googleusercontent.com/proxy/s8FIu-PebF7zIf0weAb6CGfV5ioe2HB5WTWPoTiKYoaqx32RfWd39VMkDFfnLFSryIkPrnGiv1KyoXA5xsttRhuKdJzgJ4zdng">
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="ingrandita">
+  </div>
+
+  <div class="footerbar">
+    <div class="elementiFooterbar">
+      <ul>
+        <li><a href="https://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook</a></li>
+        <li><a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a></li>
+        <li><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">Youtube</a></li>
+        <li><a href="../contatti.html"><img src="https://cdn-icons-png.flaticon.com/512/2343/2343697.png" alt="contatti">Contact</a></li>
+      </ul>
+
+
+
+    </div>
+  </div>
+
+  
+
+
+
+</body>
+
+
+
+<script>
+ document.addEventListener("DOMContentLoaded", function() { // Assicurati che il DOM sia completamente caricato prima di eseguire il codice
+    const Sidebar = document.getElementById("Sidebar"); // Barra laterale
+    const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
+    let sidebarOpen = false; // Variabile per tenere traccia dello stato della barra laterale
+  
+    function openSidebar() { // Funzione per aprire la barra laterale
+      Sidebar.style.display = "block"; // Mostra la barra laterale
+      menuToggle.src = "../img/close.png"; // Usa la tua icona X
+      sidebarOpen = true; // Imposta lo stato della barra laterale come aperta
+    }
+  
+    function closeSidebar() { // Funzione per chiudere la barra laterale
+      Sidebar.style.display = "none"; // Nascondi la barra laterale
+      menuToggle.src = "../img/hamburger.png"; // Torna all'icona del menu hamburger
+      sidebarOpen = false; // Imposta lo stato della barra laterale come chiusa
+    }
+  
+    if (menuToggle) {
+      menuToggle.addEventListener("click", function() { // Aggiungi un gestore di eventi per il click sull'icona del menu
+        if (sidebarOpen) { // Se la barra laterale è aperta
+          closeSidebar();   // Chiudi la barra laterale
+        } else { // Se la barra laterale è chiusa
+          openSidebar(); // Apri la barra laterale
+        } 
+      });
+    }
+  });
+
+  user_Name();
+</script>
+
+
+
+
+    
+</html>
+
+
+
+<script src="galleryscript.js"></script>

@@ -4,12 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="profilePageStyle.css">
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/profilePageStyle.css">
+    <link rel="stylesheet" href="CSS\stylesNav.css">
+    <script src="JS/scriptNav.js" defer></script>
+    <script src="JS\scriptName.js" defer></script>
+    <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
 </head> 
 <body>
-    <div id="navbar"></div>
+  <nav class="navbar"> <!-- Barra di navigazione -->
+    <div class="flexContainerNav"> <!-- Contenitore flessibile per la barra di navigazione -->
+        <div class="nav-icon"> <!-- Icona del menu hamburger -->
+            <img id="menu-toggle" src="img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;"> <!-- Icona del menu hamburger -->
+        </div> 
+
+        <div class="nav-logo">
+            <img src="img/logo.png"  style="height: 100px; width: 100px;">
+        </div>
+        <div style="flex-grow: 1; text-align: right; color: white;">
+            <h1 id="usernameNavbar">welcome!</h1>
+        </div>
+
+
+        <div class="nav-icon">      
+            <img src="img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='login.html'">
+        </div>
+    </div>
+  </nav>
+
+  <aside> <!-- Barra laterale -->
+    <div class="mySidebar" id="Sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="../index.html"> <strong>⌂ Home</strong></a></li>
+            <li><a href="Culture\CultAgrigento.html">Agrigento</a></li>
+            <li><a href="Culture\CultCatania.html">Catania</a></li>
+            <li><a href="Culture\CultMessina.html">Messina</a></li>
+            <li><a href="Culture\CultPalermo.html">Palermo</a></li>
+            <li><a href="Culture\CultRagusa.html">Ragusa</a></li>
+            <li><a href="Culture\CultSiracusa.html">Siracusa</a></li>
+            <li><a href="Culture\CultTrapani.html">Trapani</a></li>
+        </ul>
+    </div>
+  </aside>
+  
     
     
     <div class="main">
@@ -17,11 +57,10 @@
         <div class="profile-header">
             <img src="img\profilePicture.jpg" alt="Profile Picture" class="profile-picture">
             <div class="profile-header-content">
-            <h1 class="profile-name" id="first_name">Nome Cognome</h1>
-            <p class="profile-username" id="usernameUtente">@username</p> 
+            <h1 class="profile-name" id="usernameProfile">Nome Cognome</h1>
             <p class="profile-email" id="emailUtente">Email:</p> 
             <button>Change Email</button> <button>Change password</button>
-            <h3 id="likedCity">You liked a total of: $city</h3>
+            <h3 id="likedCity">You Visited:</h3>
             </div>
         </div>
         
@@ -29,35 +68,14 @@
             
     </div>
     
-</body>
-</html>
-
 <script>
-// Carica il contenuto del file navbar.html e lo inserisce nell'elemento con id "navbar"
-  fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-    });
+user_Name();
+user_Email();
 
-const ip = "http://127.0.0.1:5001/";
-
-if (localStorage.getItem("username")) {
-    document.getElementById("usernameUtente").textContent = "Welcome back " + localStorage.getItem("username");
-} else {
-    document.getElementById("usernameUtente").textContent = "Welcome!";
-}
-
-if (localStorage.getItem("email")) {
-    document.getElementById("emailUtente").textContent = localStorage.getItem("email");
-} else {
-    document.getElementById("usernameUtente").textContent = "Welcome!";
-}
-
-
-getUserData();
 </script>
 
 
-<script src="script.js"></script>
+
+</body>
+</html>
 

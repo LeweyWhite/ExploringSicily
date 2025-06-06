@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explore Sicily</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="stylesNav.css">
-  <link rel ="stylesheet" href="stilePagine.css">
+  <link rel="stylesheet" href="CSS\styles.css">
+  <link rel="stylesheet" href="CSS\stylesNav.css">
+  <link rel ="stylesheet" href="CSS\stilePagine.css">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   <html lang="en-US">
   <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
   <meta name="theme-color" content="red"> <!-- Colore del tema per i browser compatibili -->
-  <script src="scriptNav.js"></script>
+  <script src="scriptNav.js" defer ></script>
+  <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
+  <script src="../JS/scriptName.js" defer></script>
 </head>
 
 <body>
@@ -26,7 +28,7 @@
             <img src="img/logo.png"  style="height: 100px; width: 100px;">
         </div>
         <div style="flex-grow: 1; text-align: right; color: white;">
-            <h1 id="usernameUtente">welcome!</h1>
+              <h1 id="usernameProfile">welcome!</h1>
         </div>
 
 
@@ -42,14 +44,14 @@
             <h2>Menu</h2>
         </div>
         <ul class="sidebar-menu">
-            <li><a href="index.html"> <strong>⌂ Home</strong></a></li>
-            <li><a href="CultAgrigento.html">Agrigento</a></li>
-            <li><a href="CultCatania.html">Catania</a></li>
-            <li><a href="CultMessina.html">Messina</a></li>
-            <li><a href="CultPalermo.html">Palermo</a></li>
-            <li><a href="CultRagusa.html">Ragusa</a></li>
-            <li><a href="CultSiracusa.html">Siracusa</a></li>
-            <li><a href="CultTrapani.html">Trapani</a></li>
+            <li><a href="../index.html"> <strong>⌂ Home</strong></a></li>
+            <li><a href="/Culture/CultAgrigento.html">Agrigento</a></li>
+            <li><a href="/Culture/CultCatania.html">Catania</a></li>
+            <li><a href="/Culture/CultMessina.html">Messina</a></li>
+            <li><a href="/Culture/CultPalermo.html">Palermo</a></li>
+            <li><a href="/culture/CultRagusa.html">Ragusa</a></li>
+            <li><a href="/Culture/CultSiracusa.html">Siracusa</a></li>
+            <li><a href="/Culture/CultTrapani.html">Trapani</a></li>
         </ul>
     </div>
   </aside>
@@ -69,29 +71,23 @@
         <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonTrapani.html">
+               <a href="Monumenti/MonTrapani.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishTrapani.html">
+              <a href="Piatti/DishTrapani.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="CultTrapani.html">
+              <a href="Culture/CultTrapani.html">
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
-            </li>
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
-            </li>
+            </li>      
           </ul>
         </div>
     </div>
@@ -104,28 +100,22 @@
         <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonPalermo.html">
+               <a href="Monumenti/MonPalermo.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishPalermo.html">
+              <a href="Piatti/DishPalermo.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="CultPalermo.html">
+              <a href="Culture/CultPalermo.html">
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
-            </li>
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
             </li>
           </ul>
         </div>
@@ -140,28 +130,22 @@
       <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonAgrigento.html">
+               <a href="Monumenti/MonAgrigento.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishAgrigento.html">
+              <a href="Piatti/DishAgrigento.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="CultAgrigento.html">
+              <a href="Culture/CultAgrigento.html">
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
-            </li>
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
             </li>
           </ul>
         </div>
@@ -176,29 +160,24 @@
         <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonCaltanissetta.html">
+               <a href="Monumenti/MonCaltanissetta.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishCaltanisetta.html">
+              <a href="Piatti/DishCaltanisetta.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="">
+              <a href="Culture/CultCaltanissetta.html">
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
             </li>
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
-            </li>
+
           </ul>
         </div>
 
@@ -210,31 +189,25 @@
         <img src="img/bckg/ennaBckg.jpg" alt="Sicily" class="portrait">
         <h1 class="city-name">ENNA</h1>
 
-          <<div class="menuLista" id="showMenu1" >
+          <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonEnna.html">
+               <a href="Monumenti/MonEnna.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishEnna.html">
+              <a href="Piatti/DishEnna.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="Cultenna.html"> <!--COSO MANCANTE--> 
+              <a href="Culture/CultEnna.html"> <!--COSO MANCANTE--> 
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
-            </li>
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
             </li>
           </ul>
           </div>
@@ -248,28 +221,22 @@
        <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonMessina.html">
+               <a href="Monumenti/MonMessina.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishMessina.html">
+              <a href="Piatti/DishMessina.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="CultMessina.html">
+              <a href="Culture/CultMessina.html">
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
-            </li>
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
             </li>
           </ul>
         </div>      
@@ -283,28 +250,22 @@
         <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonCatania.html">
+               <a href="Monumenti/MonCatania.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishCatania.html">
+              <a href="Piatti/DishCatania.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="CultCatania.html">
+              <a href="Culture/CultCatania.html">
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
-            </li>
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
             </li>
           </ul>
         </div>
@@ -318,28 +279,22 @@
         <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonRagusa.html">
+               <a href="Monumenti/MonRagusa.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishRagusa.html">
+              <a href="Piatti/DishRagusa.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="CultRagusa.html">
+              <a href="Culture/CultRagusa.html">
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
-            </li>
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
             </li>
           </ul>
         </div>
@@ -347,36 +302,28 @@
      
     <!-- Sezione per Siracusa -->
     <div class="portrait">
-        <img src="img\bckg\siracusaBckg.jpg" alt="Sicily" class="portrait">
+        <img src="img\bckg\siracusaBckg.jpg" alt="Sicily">
         <h1 class="city-name">SIRACUSA</h1>
         
         <div class="menuLista" id="showMenu1" >
           <ul id="menuLista" style="list-style-type: none;">
             <li>
-               <a href="MonSiracusa.html">
+               <a href="Monumenti/MonSiracusa.html">
                  <img src="img/monumental.png">
                  <h5>MONUMENTS</h5>
                </a>
             </li>
             <li>
-              <a href="DishSiracusa.html">
+              <a href="Piatti/DishSiracusa.html">
               <img src="img\cutlery.png">
               <h5>FOOD</h5>
               </a>
               </li>
             <li>
-              <a href="CultSiracusa.html">
+              <a href="Culture/CultSiracusa.html">
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
-            </li>
-            <!-- Sezione per Like Button -->
-            <li>
-              <img src="img\unlikeButton.png" id="likeButton">
-            </li>
-            <!-- Sezione per Bookmark -->
-            <li> 
-              <img src="img\bookmark.png" id="bookmarkButton">
             </li>
           </ul>
         </div>
@@ -391,7 +338,7 @@
         <li><a href="https://www.facebook.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> Facebook</a></li>
         <li><a href="https://www.instagram.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">Instagram</a></li>
         <li><a href="https://www.youtube.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube">Youtube</a></li>
-        <li><a href=""><img src="https://cdn-icons-png.flaticon.com/512/2343/2343697.png" alt="contatti">Contact</a></li>
+        <li><a href="../contatti.html"><img src="https://cdn-icons-png.flaticon.com/512/2343/2343697.png" alt="contatti">Contact</a></li>
       </ul>
       </div>
       </div>
@@ -403,15 +350,6 @@
 </html>
 
 <script>
-// Carica il contenuto del file navbar.html e lo inserisce nell'elemento con id "navbar"
-  fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar').innerHTML = data;
-    });
-
-
-
   document.addEventListener("DOMContentLoaded", function() { // Assicurati che il DOM sia completamente caricato prima di eseguire il codice
     const Sidebar = document.getElementById("Sidebar"); // Barra laterale
     const menuToggle = document.getElementById("menu-toggle"); // Icona del menu hamburger
@@ -478,13 +416,7 @@ async function getUserData() {
 }
 
 
-
-if (localStorage.getItem("username")) {
-    document.getElementById("usernameUtente").textContent = "Welcome back " + localStorage.getItem("username");
-} else {
-    document.getElementById("usernameUtente").textContent = "Welcome!";
-}
-
+user_Name();
 </script>
 
 
