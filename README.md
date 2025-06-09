@@ -10,6 +10,7 @@ Il sito fornisce uno strumento utile alle persone che hanno intenzione di visita
 - HTML5  
 - CSS3  
 - JavaScript  
+- Docker
 
 
 ## 📁 Struttura del progetto
@@ -74,6 +75,7 @@ Il sito fornisce uno strumento utile alle persone che hanno intenzione di visita
 -   git clone https://github.com/LeweyWhite/ExploringSicily
 
 ## Autori
+### Gruppo 5
 - Luigi Bianchi
 - Giulia Mirabile
 - Gaia Bordellino
