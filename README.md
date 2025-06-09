@@ -1,13 +1,7 @@
 # 🌐 Gruppo 5 - Sicily 
-
-
-
----
-
 ## 📋 Descrizione
 
-Scrivi qui una descrizione più dettagliata del progetto.  
-Ad esempio: questo sito web è stato creato come progetto per il corso di [nome del corso], con l'obiettivo di [spiega lo scopo del sito].
+Il sito 
 
 ---
 
@@ -21,21 +15,19 @@ Ad esempio: questo sito web è stato creato come progetto per il corso di [nome 
 ## 📁 Struttura del progetto
 
 /nome-cartella-progetto
-│
-├── index.html # Pagina principale
-├── about.html # Chi siamo / Profilo
-├── contact.html # Contatti
+├── index.html
+├── about.html
+├── contact.html
 │
 ├── css/
-│ └── style.css # Stili personalizzati
+│ └── style.css
 │
 ├── js/
-│ └── script.js # Script JavaScript
+│ └── script.js
 │
 └── assets/
-├── images/ # Immagini
-└── icons/ # Icone
-
+├── images/
+└── icons/
 ---
 
 ## ✨ Funzionalità principali
@@ -47,13 +39,14 @@ Ad esempio: questo sito web è stato creato come progetto per il corso di [nome 
 
 ---
 
-## 🧪 Come visualizzare il sito
+## 🧪 Git 
 
-1. Scaricare o clonare il progetto:
-   ```bash
-   git clone https://github.com/tuo-username/nome-progetto.git
+-   git clone https://github.com/LeweyWhite/ExploringSicily
 
-## Autore
-- Nome Cognome
+## Autori
+- Luigi Bianchi
+- Giulia Mirabile
+- Gaia Bordellino
+- Giorgia Puleo
 - Email: tuomail@example.com
-- GitHub: [tuo-username](https://github.com/tuo-username)
+- GitHub: https://github.com/LeweyWhite/
