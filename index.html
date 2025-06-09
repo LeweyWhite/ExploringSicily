@@ -4,15 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Explore Sicily</title>
-  <link rel="stylesheet" href="CSS\styles.css">
+  <!-- Collegamento ai file CSS -->
+  <link rel="stylesheet" href="CSS\styles.css"> 
   <link rel="stylesheet" href="CSS\stylesNav.css">
   <link rel ="stylesheet" href="CSS\stilePagine.css">
+  <!-- Icone Flaticon -->
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   <html lang="en-US">
-  <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
-  <meta name="theme-color" content="red"> <!-- Colore del tema per i browser compatibili -->
+  <!-- Icona della pagina -->
+  <link rel="icon" href="img\logo.png" type="image/x-icon">
+  <!-- Colore del tema per i browser compatibili -->
+  <meta name="theme-color" content="red">
+  <!-- Script per la barra di navigazione -->
   <script src="scriptNav.js" defer ></script>
-  <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
+  <!-- Icona della pagina (duplicato, puoi rimuovere uno dei due) -->
+  <link rel="icon" href="img\logo.png" type="image/x-icon">
+  <!-- Script per il nome utente -->
   <script src="../JS/scriptName.js" defer></script>
 </head>
 
@@ -24,15 +31,14 @@
             <img id="menu-toggle" src="img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;"> <!-- Icona del menu hamburger -->
         </div> 
 
-        <div class="nav-logo">
+        <div class="nav-logo"> <!-- Logo del sito -->
             <img src="img/logo.png"  style="height: 100px; width: 100px;">
         </div>
         <div style="flex-grow: 1; text-align: right; color: white;">
-              <h1 id="usernameProfile">welcome!</h1>
+              <h1 id="usernameProfile">welcome!</h1> <!-- Messaggio di benvenuto -->
         </div>
 
-
-        <div class="nav-icon">      
+        <div class="nav-icon"> <!-- Icona utente -->
             <img src="img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='login.html'">
         </div>
     </div>
@@ -54,34 +60,28 @@
             <li><a href="/Culture/CultTrapani.html">Trapani</a></li>
         </ul>
     </div>
-  </aside>
+</aside>
 
-  
-  <img src="img\banner.png" alt="Sicily Banner" class="banner">
-  
+<!-- Banner principale -->
+<img src="img\banner.png" alt="Sicily Banner" class="banner">
 
+<div class="flex-container"> <!-- Contenitore principale delle città -->
 
-  <div class="flex-container">
-
-    <!-- Sezione per trapani -->
-    <div class="portrait">
-      <img src="img\bckg\trapaniBckg.png" alt="Sicily" class="portrait"> 
-      <h1 class="city-name">TRAPANI</h1>
-      
-        <div class="menuLista" id="showMenu1" >
-          <ul id="menuLista" style="list-style-type: none;">
-            <li>
-               <a href="Monumenti/MonTrapani.html">
-                 <img src="img/monumental.png">
-                 <h5>MONUMENTS</h5>
-               </a>
-            </li>
-            <li>
-              <a href="Piatti/DishTrapani.html">
-              <img src="img\cutlery.png">
-              <h5>FOOD</h5>
-              </a>
-              </li>
+  <!-- Sezione per trapani -->
+  <div class="portrait">
+    <img src="img\bckg\trapaniBckg.png" alt="Sicily" class="portrait"> 
+    <h1 class="city-name">TRAPANI</h1>
+    <!-- Menu della città -->
+    <div class="menuLista" id="showMenu1" >
+      <ul id="menuLista" style="list-style-type: none;">
+        <li>
+           <a href="Monumenti/MonTrapani.html">
+             <img src="img/monumental.png">
+             <h5>MONUMENTS</h5>
+           </a>
+        </li>
+        <li>
+          <a href
             <li>
               <a href="Culture/CultTrapani.html">
               <img src="img\holi.png">
@@ -204,7 +204,7 @@
               </a>
               </li>
             <li>
-              <a href="Culture/CultEnna.html"> <!--COSO MANCANTE--> 
+              <a href="Culture/CultEnna.html"> 
               <img src="img\holi.png">
               <h5>CULTURE</h5>
               </a>
@@ -378,45 +378,7 @@
     }
   });
 
- 
-const ip = "http://127.0.0.1:5001/"; // Imposta l'IP del server
-
-async function getUserData() {
-    try {
-        const response = await fetch(ip + 'api/news', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        });
-        const data = await response.json();
-        const username = data.username;
-        const email = data.email;
-        document.getElementById('usernameUtente').textContent = 'Welcome back '  +'@' + username;
-        document.getElementById('emailUtente').textContent = 'Email: ' + email;
-    } catch (error) {
-        console.error('Errore nel recupero dati utente:', error);
-    }
-
-     try {
-        const response = await fetch(ip + 'api/faq', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        });
-        const data = await response.json();
-        const firstName = data.first_name || '';
-        const lastName = data.last_name || '';
-        document.getElementById('first_name').textContent = `${firstName} ${lastName}`;
-        document.getElementById('emailUtente').textContent = 'Email: ' + (email || '');
-    } catch (error) {
-        console.error('Errore nel recupero dati utente:', error);
-    }
-}
-
-
-user_Name();
+user_Name(); // Richiama lo script dal file esterno
 </script>
 
 

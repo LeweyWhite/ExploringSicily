@@ -25,14 +25,14 @@
 
 /* BANNER */
 .banner {
-    display: flex; /* Usa il layout flexbox per il banner */
-    position: relative; /* Posizione relativa per posizionare gli elementi all'interno del banner */  
+    display: block; /* Usa il layout flexbox per il banner */
+    position:  relative; /* Posizione relativa per posizionare gli elementi all'interno del banner */  
     top: 100px; /* Sposta il banner sotto la navbar */   
     background-image: url('img/banner.jpg'); /* Immagine di sfondo del banner */    
     background-size: cover; /* Copre l'intera area del banner */
     background-position: center; /* Centra l'immagine di sfondo */  
     background-repeat: no-repeat; /* Non ripete l'immagine di sfondo */
-    z-index: 1; /* Assicura che il banner sia sotto altri elementi della pagina */
+    z-index: 0; /* Assicura che il banner sia sotto altri elementi della pagina */
     width: 100%; /* Larghezza del banner */ 
 }
 
@@ -48,7 +48,8 @@
     transform: translate(-50%, -5%);   
     position: relative;
     z-index: 1;
-}
+} 
+
 
 /*contenitore immagini galleria */
 .flex-container {
@@ -93,6 +94,7 @@
     position: relative; 
     filter: sepia(50%) grayscale(0%) brightness(70%); /* Applica il filtro seppia e scala di grigi 
 } */
+
 .portrait:hover {
     filter:  sepia(0%) grayscale(0%); /* Rimuove il filtro in scala di grigi al passaggio del mouse */
     transition: filter 0.3s ease-in; /* Aggiunge una transizione per un effetto più fluido */
@@ -104,7 +106,7 @@
 
 /*  Parte immagini testo */
 .city-name {
-    position: absolute;
+    position: absolute; 
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
