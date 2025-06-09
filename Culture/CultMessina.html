@@ -100,6 +100,26 @@ chiacchiere and crostoli, are a must of the festival.
 
         </p>
 
+        <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Messina?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Messina')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Messina to the list of visited places.
+  </button>
+</div>
+
+
 
          <div class="galleria">
             <img class="immagine" src="https://www.foodtoursicily.it/wp-content/uploads/2019/06/Festa-di-S.-Antonio-di-Padova-a-Messina-2019-1024x685.jpg" alt="1">
@@ -160,6 +180,35 @@ chiacchiere and crostoli, are a must of the festival.
   });
 
   user_Name();
+</script>
+
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
 </script>
 
 

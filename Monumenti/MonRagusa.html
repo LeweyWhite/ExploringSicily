@@ -65,6 +65,24 @@
           Connecting the two souls of the city is the Ponte Vecchio, also known as the Capuchin Bridge. Built in the 19th century, it is more than just a link between two points—it is a bridge between eras, between different worlds of the same city. Walking across it, looking out over the valley of the San Leonardo River, is an experience with something poetic about it. As if Ragusa, from that bridge, wanted to whisper a story to you through the wind.
           Finally, in one of the city’s most evocative areas, stands the Church of San Francesco all'Immacolata. Founded in the 13th century and reshaped over the centuries, this church blends spirituality and art. Its three naves house Baroque altars, silences heavy with prayer, and works that tell the simple yet profound life of the Franciscans. It is a place that seems to hold, like a treasure chest, the most intimate soul of Ragusa.
            </p>
+            <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Agrigento?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Agrigento')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Agrigento to the list of visited places.
+  </button>
+</div>
 
 
          <div class="galleria">
@@ -125,6 +143,38 @@
   });
   user_Name();
 </script>
+
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
+</script>
+
+
+
 
 
 

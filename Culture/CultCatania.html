@@ -99,6 +99,26 @@ honor the figure of San Nicola as a bearer of miracles.
 
         </p>
 
+        <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Catania?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Catania')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Catania to the list of visited places.
+  </button>
+</div>
+
+
 
          <div class="galleria">
             <img class="immagine" src="https://latuaitalia.ru/wp-content/uploads/2020/01/Wead_1572410833.jpg" alt="1">
@@ -160,6 +180,35 @@ honor the figure of San Nicola as a bearer of miracles.
   });
 
   user_Name();
+</script>
+
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
 </script>
 
 </body>

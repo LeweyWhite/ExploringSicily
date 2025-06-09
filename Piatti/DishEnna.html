@@ -66,7 +66,26 @@ Bucinati are a traditional type of pasta named after their distinctive shape, re
 Cassatelle are a traditional sweet from Enna, especially loved during festive seasons. These are small pastries made from shortcrust dough filled with fresh ricotta cheese and chocolate or candied orange peel, then fried and dusted with powdered sugar. The delicate ricotta filling, mixed with the rich flavor of chocolate or fruit, makes cassatelle an irresistible dessert—a symbol of a sweet and welcoming Sicily
 </P>
 
-        </p>
+<!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Enna?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Enna')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Enna to the list of visited places.
+  </button>
+</div>
+
+      
 
 
          <div class="galleria">
@@ -128,7 +147,34 @@ Cassatelle are a traditional sweet from Enna, especially loved during festive se
   
     user_Name();
 </script>
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
 
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
+</script>
 
 
 </body>

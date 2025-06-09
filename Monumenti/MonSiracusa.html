@@ -64,6 +64,24 @@
           But Syracuse is not only about antiquity. <br> The city is also home to the Paolo Orsi Archaeological Museum, which hosts an extensive collection of artifacts that narrate the story of Syracuse—from its prehistoric beginnings to the Roman era—offering visitors a journey through time that deepens their understanding of this extraordinary city.
           Every monument, every stone in Syracuse tells stories of ancient civilizations, of art, culture, and great battles. A city that was once a cradle of philosophy and politics, it remains today one of the most captivating destinations for those who wish to discover the true spirit of Sicily. Syracuse is not just a city to see, but a city to experience— a journey through the centuries that leaves every visitor with a unique and unforgettable emotion.
           </p>
+          <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Syracuse?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Siracusa')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Syracuse to the list of visited places.
+  </button>
+</div>
 
 
          <div class="galleria">
@@ -128,6 +146,38 @@
 </script>
 
 <script src="galleryscript.js"></script>
+
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
+</script>
+
+
+
 
 
 </body>

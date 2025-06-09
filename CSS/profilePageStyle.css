@@ -78,3 +78,29 @@ button:active {
     background-color: #0657a8; /* Colore di sfondo del pulsante quando viene cliccato */
     color: gray; /* Colore del testo del pulsante quando viene cliccato */
 }
+
+        /* Stile inline per la lista visitati */
+        #visitedPlacesList {
+            list-style-type: none;
+            padding: 12px 20px;
+            border: 2px solid #0A84FF;
+            border-radius: 10px;
+            max-width: 400px;
+            background-color: #ffffff;
+            color: #0A84FF;
+            font-family: Arial, sans-serif;
+            margin-top: 10px;
+        }
+        #visitedPlacesList li {
+            padding: 6px 0;
+            border-bottom: 1px solid #0A84FF;
+        }
+        #visitedPlacesList li:last-child {
+            border-bottom: none;
+        }
+        h3.visited-header {
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }

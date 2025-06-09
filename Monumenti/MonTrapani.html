@@ -66,6 +66,25 @@
           Also worth a visit is the Agostino Pepoli Regional Museum, which hosts numerous archaeological artifacts and works of art, including ceramics, sculptures, and paintings that tell the story of the city and its territory. The museum is a must for anyone wanting to gain a deeper understanding of Trapani’s culture and traditions.
           We cannot forget the Torre di Ligny, a historic watchtower located at the edge of the city. Built in 1671, the tower was designed to defend the coast from pirate attacks. Today, the Torre di Ligny houses a maritime museum that tells the story of the sea and the seafaring traditions of Trapani.
           </p>
+          <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Trapani?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Trapani')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Trapani to the list of visited places.
+  </button>
+</div>
+
 
 
          <div class="galleria">
@@ -128,6 +147,36 @@
   
     user_Name();
 </script>
+
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
+</script>
+
 
 
 </body>

@@ -58,7 +58,33 @@
         </div>
   </div>     
 
-        <p> </p>
+        <p> Caltanissetta, a city that sinks its roots in antiquity and preserves intact the signs of its historical evolution, is a true treasure chest of beauty and culture. Walking through its streets, one can breathe centuries of history, witnessed by the monuments that still characterize it today, making it an unmissable destination for those who want to discover the most authentic Sicily.
+          At the top of the list of places to visit is the Cathedral of Caltanissetta, dedicated to Saint Michael the Archangel. Built in the 18th century in Baroque style, the cathedral captivates with its grandeur and interior rich in artistic details, ranging from stucco decorations to frescoes adorning the central nave. It is the spiritual heart of the city, the place where the faithful gather to celebrate their devotion and, at the same time, a splendid example of Sicilian religious art.
+          Not far away, the Church of San Domenico rises with its Baroque façade, telling stories of faith and art. This monument was built in the 17th century and houses valuable works inside, such as frescoes and stuccoes that reflect the grandeur of the era. The church, standing tall with its bell tower over the city, is another landmark for those visiting Caltanissetta, not only for its religious function but also for its artistic value.
+          No less important is the Church of Santa Maria degli Angeli, whose origins date back to the 16th century. This sacred place is a perfect example of how religious architecture can tell the history and culture of a city. Its beauty lies in the simple yet refined details that adorn the interior and its harmonious structure, which has withstood time while maintaining unparalleled charm.
+          If you are passionate about history, the Moncada Palace is another must-see. Built in the 16th century, this elegant noble building, now the seat of the Municipality, is a testimony to the aristocratic past of the city. Its façade, imposing and decorated with stuccoes and elaborate windows, tells the story of the noble families who lived there and the political events that have unfolded in the city.
+          Caltanissetta also has a thriving theatrical culture. The Regina Margherita Theatre, inaugurated in 1892, is a fascinating place that has welcomed audiences for over a century. With its neoclassical structure and perfect acoustics, the theater is the beating heart of cultural life in Caltanissetta, hosting a variety of theatrical, musical, and cultural performances that enchant audiences of all ages.
+          Finally, the Castle of Caltanissetta, located on a hill, is a symbol of the city’s medieval past. Although much of its structure has fallen into ruin, the castle offers a spectacular view of the city and surrounding landscapes. It is a perfect place to immerse oneself in the historical atmosphere of Caltanissetta and to appreciate the grandeur of times gone by.
+          Every corner of Caltanissetta, from its lively squares to its historic architecture, tells a story of traditions rooted in the past. With monuments ranging from Baroque to medieval times, the city is a perfect example of how Sicily blends art, culture, and history, creating a destination that enchants and fascinates visitors.
+           </p>
+        <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Caltanissetta?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Caltanissetta')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Caltanissetta to the list of visited places.
+  </button>
+</div>
 
 
          <div class="galleria">
@@ -120,6 +146,37 @@
 
   user_Name();
 </script>
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
+</script>
+
+
+
 
 
 

@@ -105,6 +105,25 @@ The Feast of Santa Rosalia, celebrated every year on September 4, is one of the 
 events for Caltanissetta. Although Santa Rosalia is the patron saint of Palermo, her devotion is also deeply felt in Caltanissetta, where the community of Caltanissetta honors the saint with a great religious and popular festival. The procession that takes place through the streets of the city is followed by a devout crowd that accompanies the statue of Santa Rosalia, adorned with flowers and candles, to the church dedicated to the saint. The festival is a moment of great emotional and spiritual participation, which ends with fireworks and folkloristic shows, a celebration that unites the sacred and the profane in a single, intense collective experience. The traditions of Caltanissetta are a perfect blend of religious devotion, popular celebrations and festivities that give life to a city rich in history, culture and passion. Every event, whether it is a solemn procession, a colorful festival or a traditional fair, is an opportunity to experience the most authentic Sicily, made up of moments of sharing, faith, joy and a deep sense of belonging to one's community. Caltanissetta is not just a city to visit, but a place to live, where every tradition tells a story that sinks into the heart of Sicily.
         </p>
 
+        <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Caltanissetta?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Caltanissetta')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;"
+  >
+  Add Caltanissetta to the list of visited places.
+  </button>
+</div>
+
+
 
          <div class="galleria">
             <img class="immagine" src="https://caltanissetta-api.municipiumapp.it/s3/720x960/s3/1099/newsimage/fb_img_1711376811192.jpg" alt="1">
@@ -163,6 +182,35 @@ events for Caltanissetta. Although Santa Rosalia is the patron saint of Palermo,
 
   user_Name();
 </script>
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
+</script>
+
 
 
 </body>   

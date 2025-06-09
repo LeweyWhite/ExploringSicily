@@ -1,81 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Profile Page</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/profilePageStyle.css">
-    <link rel="stylesheet" href="CSS\stylesNav.css">
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/profilePageStyle.css" />
+    <link rel="stylesheet" href="CSS/stylesNav.css" />
     <script src="JS/scriptNav.js" defer></script>
-    <script src="JS\scriptName.js" defer></script>
-    <link rel="icon" href="img\logo.png" type="image/x-icon"> <!-- Icona della pagina -->
-</head> 
+    <script src="JS/scriptName.js" defer></script>
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+    <style>
+
+    </style>
+</head>
 <body>
-  <nav class="navbar"> <!-- Barra di navigazione -->
-    <div class="flexContainerNav"> <!-- Contenitore flessibile per la barra di navigazione -->
-        <div class="nav-icon"> <!-- Icona del menu hamburger -->
-            <img id="menu-toggle" src="img/hamburger.png" style="height: 64px; padding-left: 10px; cursor: pointer;"> <!-- Icona del menu hamburger -->
-        </div> 
-
-        <div class="nav-logo">
-            <img src="img/logo.png"  style="height: 100px; width: 100px;">
-        </div>
-        <div style="flex-grow: 1; text-align: right; color: white;">
-            <h1 id="usernameNavbar">welcome!</h1>
-        </div>
-
-
-        <div class="nav-icon">      
-            <img src="img/user.png" style="height: 64px; cursor: pointer;" onclick="window.location.href='login.html'">
-        </div>
-    </div>
-  </nav>
-
-  <aside> <!-- Barra laterale -->
-    <div class="mySidebar" id="Sidebar">
-        <div class="sidebar-header">
-            <h2>Menu</h2>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="../index.html"> <strong>⌂ Home</strong></a></li>
-            <li><a href="Culture\CultAgrigento.html">Agrigento</a></li>
-            <li><a href="Culture\CultCatania.html">Catania</a></li>
-            <li><a href="Culture\CultMessina.html">Messina</a></li>
-            <li><a href="Culture\CultPalermo.html">Palermo</a></li>
-            <li><a href="Culture\CultRagusa.html">Ragusa</a></li>
-            <li><a href="Culture\CultSiracusa.html">Siracusa</a></li>
-            <li><a href="Culture\CultTrapani.html">Trapani</a></li>
-        </ul>
-    </div>
-  </aside>
-  
-    
-    
-    <div class="main">
-    <div class="profile-container">
-        <div class="profile-header">
-            <img src="img\profilePicture.jpg" alt="Profile Picture" class="profile-picture">
-            <div class="profile-header-content">
-            <h1 class="profile-name" id="usernameProfile">Nome Cognome</h1>
-            <p class="profile-email" id="emailUtente">Email:</p> 
-            <button>Change Email</button> <button>Change password</button>
-            <h3 id="likedCity">You Visited:</h3>
+    <nav class="navbar">
+        <div class="flexContainerNav">
+            <div class="nav-icon">
+                <img
+                    id="menu-toggle"
+                    src="img/hamburger.png"
+                    style="height: 64px; padding-left: 10px; cursor: pointer"
+                    alt="Menu Hamburger"
+                />
+            </div>
+            <div class="nav-logo">
+                <img src="img/logo.png" style="height: 100px; width: 100px" alt="Logo" />
+            </div>
+            <div style="flex-grow: 1; text-align: right; color: white">
+                <h1 id="usernameNavbar">welcome!</h1>
+            </div>
+            <div class="nav-icon">
+                <img
+                    src="img/user.png"
+                    style="height: 64px; cursor: pointer"
+                    onclick="window.location.href='login.html'"
+                    alt="User Icon"
+                />
             </div>
         </div>
-        
-      
-            
+    </nav>
+
+    <aside>
+        <div class="mySidebar" id="Sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><strong>⌂ Home</strong></a></li>
+                <li><a href="Culture/CultAgrigento.html">Agrigento</a></li>
+                <li><a href="Culture/CultCatania.html">Catania</a></li>
+                <li><a href="Culture/CultMessina.html">Messina</a></li>
+                <li><a href="Culture/CultPalermo.html">Palermo</a></li>
+                <li><a href="Culture/CultRagusa.html">Ragusa</a></li>
+                <li><a href="Culture/CultSiracusa.html">Siracusa</a></li>
+                <li><a href="Culture/CultTrapani.html">Trapani</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="main">
+        <div class="profile-container">
+            <div class="profile-header">
+                <img
+                    src="img/profilePicture.jpg"
+                    alt="Profile Picture"
+                    class="profile-picture"
+                />
+                <div class="profile-header-content">
+                    <h1 class="profile-name" id="usernameProfile">Nome Cognome</h1>
+                    <p class="profile-email" id="emailUtente">Email:</p>
+                    <button>Change Email</button>
+                    <button>Change password</button>
+
+                    <h3 class="visited-header">Your Visited Places</h3>
+                    <ul id="visitedPlacesList">
+                        <!-- Luoghi visitati caricati dinamicamente qui -->
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-    
-<script>
-user_Name();
-user_Email();
 
-</script>
+    <script>
+function loadVisitedPlaces() {
+    const username = localStorage.getItem("username");
+
+    fetch(`http://127.0.0.1:5001/api/get_visited_places/${username}`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log("Dati ricevuti dal server:", data); // <-- QUI il log per il debug
+
+            const listContainer = document.getElementById("visitedPlacesList");
+            listContainer.innerHTML = "";
+
+            if (data.places && data.places.length > 0) {
+                data.places.forEach((place) => {
+                    const li = document.createElement("li");
+                    li.textContent = place.name || place;
+                    
+                    listContainer.appendChild(li);
+                });
+            } else {
+                listContainer.innerHTML = "<li>No places visited yet.</li>";
+            }
+        })
+        .catch((error) => {
+            console.error("Errore nel caricamento dei luoghi visitati:", error);
+            const listContainer = document.getElementById("visitedPlacesList");
+            listContainer.innerHTML = "<li>Error loading places.</li>";
+        });
+}
+
+loadVisitedPlaces();
+
+    const user = localStorage.getItem("username");
+   
 
 
 
+        // Se hai funzioni per nome ed email
+        user_Name();
+        user_Email();
+    </script>
 </body>
 </html>
-

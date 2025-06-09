@@ -113,6 +113,26 @@ discover
         </p>
 
 
+         <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Siracusa?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Siracusa')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Siracusa to the list of visited places.
+  </button>
+</div>
+
+
          <div class="galleria">
             <img class="immagine" src="https://upload.wikimedia.org/wikipedia/commons/2/23/Statua_di_Santa_Lucia_-_Siracusa.jpg" alt="1">
             <img class="immagine" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5BYIgUZrWwBOQBU-EqM2CES5gdogYgxYU6w&s">
@@ -176,6 +196,35 @@ discover
     }
   });
   user_Name();
+</script>
+
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
 </script>
 
 

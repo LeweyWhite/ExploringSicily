@@ -69,6 +69,25 @@
 
         </p>
 
+        <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Palermo?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Palermo')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Palermo to the list of visited places.
+  </button>
+</div>
+
 
          <div class="galleria">
             <img class="immagine" src="https://civitavecchia.portmobility.it/sites/default/files/palermo_-_la_fontana_pretoria.jpg" alt="1">
@@ -127,7 +146,37 @@
   });
   user_Name();
 </script>
- 
+
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
+</script>
+
+
 
 
 

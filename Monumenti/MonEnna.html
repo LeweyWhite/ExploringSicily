@@ -63,6 +63,26 @@
           One cannot leave Enna without stopping at the Belvedere of Enna, located in Piazza Europa, from where you can admire one of the most spectacular panoramas of central Sicily, with your gaze stretching over the surrounding mountains and valleys. Enna is a city that knows how to move and enchant, with its fascinating history, impressive monuments, and awe-inspiring landscapes. Every corner of the city tells a story; every stone is a witness to the glorious past of this city, which deserves to be experienced and discovered in every detail.
           </p>
 
+           <!-- Bottone per aggiungere -->
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="font-family: Georgia, serif;">"Have you visited Enna?"</h3>
+  <button 
+    onclick="addVisitedPlace(localStorage.getItem('username'), 'Enna')" 
+    style="
+      background-color: #800000;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    "
+  >
+  Add Enna to the list of visited places.
+  </button>
+</div>
+
+
 
          <div class="galleria">
             <img class="immagine" src="https://www.typicalsicily.it/wp-content/uploads/2017/03/Comune-della-Sicilia-Enna-Castello-Lombardia.jpg" alt="1">
@@ -130,6 +150,39 @@
 
   user_Name();
 </script>
+
+<script>
+  function addVisitedPlace(username, placeName) {
+    if (!username || !placeName) {
+      alert("Missing username or place name!");
+      return;
+    }
+
+    fetch("http://127.0.0.1:5001/api/add_visited_place", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username: username,
+        place_name: placeName
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert("Place added successfully!");
+      console.log("Server response:", data);
+    })
+    .catch(error => {
+      console.error("Error adding place:", error);
+      alert("There was an error. Check the console.");
+    });
+  }
+</script>
+
+
+
+
 
 
 

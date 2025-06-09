@@ -65,24 +65,6 @@
           The site is open year-round, with paths suitable for all ages, and also offers guided tours to delve into the secrets of Akragas. Walking among these ancient temples, immersed in a nature steeped in history and Mediterranean scents, is an experience that moves and inspires, capable of taking us back in time, to when the gods of Olympus still seemed to live among men.
           The Valley of the Temples is much more than an archaeological site: it is a place of the soul, where beauty, memory, and the light of Sicily merge into a single, unforgettable vision.
            </p>
-           <!-- Bottone per aggiungere -->
-<div style="text-align: center; margin-top: 20px;">
-  <h3 style="font-family: Georgia, serif;">"Have you visited Agrigento?"</h3>
-  <button 
-    onclick="addVisitedPlace(localStorage.getItem('username'), 'Agrigento')" 
-    style="
-      background-color: #800000;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    "
-  >
-  Add Agrigento to the list of visited places.
-  </button>
-</div>
 
 
          <div class="galleria">
@@ -97,6 +79,12 @@
   <div class="lightbox" id="lightbox">
     <img src="" alt="ingrandita">
   </div>
+
+  <h2>Agrigento</h2>
+<!-- Bottone per aggiungere -->
+<button onclick="addVisitedPlace(localStorage.getItem('username'), 'Agrigento')">
+  Add to Visited
+</button>
 
   <div class="footerbar">
     <div class="elementiFooterbar">
@@ -144,35 +132,47 @@
 
   user_Name();
 </script>
+
 <script>
-  function addVisitedPlace(username, placeName) {
+
+</script>
+
+<script>
+  async function addVisitedPlace(username, placeName) {
     if (!username || !placeName) {
       alert("Missing username or place name!");
       return;
     }
 
-    fetch("http://127.0.0.1:5001/api/add_visited_place", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        username: username,
-        place_name: placeName
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      alert("Place added successfully!");
-      console.log("Server response:", data);
-    })
-    .catch(error => {
-      console.error("Error adding place:", error);
-      alert("There was an error. Check the console.");
-    });
+    try {
+      const response = await fetch("http://127.0.0.1:5001/api/add_visited_place", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          username: username,
+          place_name: placeName
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Gestisce errori tipo { "response": { "error": "..." } }
+        const errorMessage = data?.response?.error || "Server error";
+        throw new Error(errorMessage);
+      }
+
+      alert("Luogo aggiunto con successo!");
+      console.log("Luoghi visitati aggiornati:", data.response || data.places);
+
+    } catch (error) {
+      console.error("Errore durante l'aggiunta:", error);
+      alert("Errore: " + error.message);
+    }
   }
 </script>
-
 
 
 
