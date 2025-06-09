@@ -13,9 +13,9 @@ Il sito
 
 
 ## 📁 Struttura del progetto
-
+```
 /nome-cartella-progetto
-├── index.html
+├─- index.html
 ├── about.html
 ├── contact.html
 │
@@ -33,6 +33,7 @@ Il sito
 └── assets/
 ├── images/
 └── icons/
+```
 ---
 
 ## ✨ Funzionalità principali
