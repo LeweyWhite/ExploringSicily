@@ -20,8 +20,13 @@ Il sito
 ├── contact.html
 │
 ├── css/
-│ └── style.css
-│
+│ └── contatti.css
+│ └── loginpage.css
+│ └── profilePageStyle.css
+│ └── registrazione.css
+│ └── stilePagine.css
+│ └── styles.css
+│ └── stylesNav.css
 ├── js/
 │ └── script.js
 │
@@ -48,5 +53,5 @@ Il sito
 - Giulia Mirabile
 - Gaia Bordellino
 - Giorgia Puleo
-- Email: tuomail@example.com
+- Email: luigi.bianchi@community.unipa.it
 - GitHub: https://github.com/LeweyWhite/
