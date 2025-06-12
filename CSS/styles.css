@@ -224,7 +224,6 @@ transition: background-color 0.3s ease; /* Transizione per un effetto più fluid
 
 @media screen and (max-width: 768px) {
 
-
 /* BANNER */
 .banner {
     display: block; /* Usa il layout flexbox per il banner */
@@ -262,8 +261,7 @@ transition: background-color 0.3s ease; /* Transizione per un effetto più fluid
     grid-template-columns: repeat(1, 1fr); /* UNA colonne di uguale larghezza */
     background-color: #ffffff; /* Colore di sfondo per la galleria */
     object-fit: cover; /* Copre l'area dell'elemento mantenendo le proporzioni */
-    margin-right: 10px; /* Spazio tra le immagini */
- 
+    margin-right: -10%;
 }
 
 
@@ -347,43 +345,38 @@ transition: background-color 0.3s ease; /* Transizione per un effetto più fluid
 .menuLista{
     z-index: 1100;
     position: absolute;
-    transform: scale(0.8);
-    top: 40%;
-    width: 100%;
-    border-bottom: 100px;
+    transform: scale(0.5);
+    top: 20%;
     display: flex;
-    flex-direction: row; /* Le icone saranno in orizzontale */
-    align-items: center;
+    flex-direction: auto ; /* Le icone saranno in orizzontale */
+
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.308);
     border-radius: 10px; /* Angoli arrotondati per un aspetto più gradevole */
 }
 
 .menuLista ul {
-    display: flex;
-    flex-wrap: wrap; /* Permette di andare a capo */
-    flex-direction: row; /* Le icone saranno in orizzontale */                    
+    display: flex;                  
     gap: 30px; /* spazio tra le voci del menu */
-    align-items: center;
-    justify-content: center;   /* Centra gli elementi */
+    align-items: auto;
+    justify-content: auto;   /* Centra gli elementi */
     list-style: none; /* Rimuove i punti elenco */
-    padding: 0;
-    margin: 0;
+
 }
 
 /* Allinea icona e testo orizzontalmente dentro ogni voce */
 .menuLista li a {
     display:flex;
     list-style: none; /* Rimuove i punti elenco */
-    justify-content: center; /* Centra gli elementi all'interno del li */
-    align-items: center; /* Allinea verticalmente gli elementi */
-    flex-direction: column; /* Icona sopra, testo sotto. Usa 'row' se vuoi testo a fianco */
+    justify-content: auto auto auto; /* Centra gli elementi all'interno del li */
+    align-items: auto auto auto; /* Allinea verticalmente gli elementi */
+    flex-direction: auto auto auto ; /* Icona sopra, testo sotto. Usa 'row' se vuoi testo a fianco */
     margin: 0 10px; /* Spazio tra le icone */
     padding: 10px; /* Spazio interno per ogni voce del menu */
     border-radius: 10px; /* Angoli arrotondati per un aspetto più gradevole */
     transition: background-color 0.3s ease; /* Transizione per un effetto più fluido */ 
     text-decoration: none; /* Rimuove la sottolineatura */
-    
+
 }
 
 
