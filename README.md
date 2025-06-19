@@ -67,6 +67,7 @@ Il sito fornisce uno strumento utile alle persone che hanno intenzione di visita
 - ✅ Login e registrazione
 - ✅ Animazioni/effetti con CSS o JavaScript
 - ✅ Galleria che da la possibilità di ingrandimento delle immagini 
+- ✅ Caricamento dell'immagine del profilo
 
 ---
 
