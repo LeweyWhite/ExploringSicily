@@ -104,3 +104,14 @@ button:active {
             margin-top: 20px;
             margin-bottom: 5px;
         }
+
+        .profilePictureButton{
+        background-color: #0A84FF; /* Colore di sfondo del pulsante */
+        color: white; /* Colore del testo del pulsante */
+        padding: 10px 20px; /* Padding interno del pulsante */
+        border: none; /* Rimuove il bordo predefinito */
+        border-radius: 5px; /* Aggiunge angoli arrotondati al pulsante */
+        cursor: pointer; /* Cambia il cursore quando si passa sopra il pulsante */
+        font-size: 16px; /* Dimensione del font del testo del pulsante */
+        margin-top: 20px; /* Spazio sopra il pulsante */ 
+        }

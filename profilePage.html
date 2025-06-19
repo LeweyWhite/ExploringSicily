@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Metadati di base -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Profile Page</title>
+
+    <!-- Collegamento ai file CSS -->
     <link rel="stylesheet" href="CSS/styles.css" />
     <link rel="stylesheet" href="CSS/profilePageStyle.css" />
     <link rel="stylesheet" href="CSS/stylesNav.css" />
+
+    <!-- Script JS con defer per esecuzione dopo il caricamento -->
     <script src="JS/scriptNav.js" defer></script>
     <script src="JS/scriptName.js" defer></script>
-    <link rel="icon" href="img/logo.png" type="image/x-icon" />
-    <style>
 
+    <!-- Favicon -->
+    <link rel="icon" href="img/logo.png" type="image/x-icon" />
+
+    <style>
+ 
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="flexContainerNav">
+            <!-- Icona hamburger menu -->
             <div class="nav-icon">
                 <img
                     id="menu-toggle"
@@ -25,14 +35,20 @@
                     alt="Menu Hamburger"
                 />
             </div>
+
+            <!-- Logo -->
             <div class="nav-logo">
                 <img src="img/logo.png" style="height: 100px; width: 100px" alt="Logo" />
             </div>
+
+            <!-- Benvenuto con username -->
             <div style="flex-grow: 1; text-align: right; color: white">
                 <h1 id="usernameNavbar">welcome!</h1>
             </div>
+
+            <!-- Icona utente -->
             <div class="nav-icon">
-                <img
+                <img 
                     src="img/user.png"
                     style="height: 64px; cursor: pointer"
                     onclick="window.location.href='login.html'"
@@ -42,6 +58,7 @@
         </div>
     </nav>
 
+    <!-- Sidebar -->
     <aside>
         <div class="mySidebar" id="Sidebar">
             <div class="sidebar-header">
@@ -60,74 +77,121 @@
         </div>
     </aside>
 
+    <!-- Contenuto principale -->
     <div class="main">
         <div class="profile-container">
             <div class="profile-header">
-                <img
+                <!-- Immagine del profilo -->
+                <img id="preview"
                     src="img/profilePicture.jpg"
                     alt="Profile Picture"
                     class="profile-picture"
                 />
                 <div class="profile-header-content">
+                    <!-- Dati profilo -->
                     <h1 class="profile-name" id="usernameProfile">Nome Cognome</h1>
                     <p class="profile-email" id="emailUtente">Email:</p>
                     <button>Change Email</button>
                     <button>Change password</button>
 
+                    <!-- Upload nuova immagine -->
+                    <h3>Change profile picture</h3>
+                    <input class="profilePictureButton" type="file" id="upload" accept="image/*">
+
+                    <!-- Luoghi visitati -->
                     <h3 class="visited-header">Your Visited Places</h3>
                     <ul id="visitedPlacesList">
-                        <!-- Luoghi visitati caricati dinamicamente qui -->
+                        <!-- Luoghi caricati dinamicamente -->
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- SCRIPT 1: Caricamento dei luoghi visitati -->
     <script>
-function loadVisitedPlaces() {
-    const username = localStorage.getItem("username");
+        // Funzione che carica i luoghi visitati dell'utente
+        function loadVisitedPlaces() {
+            const username = localStorage.getItem("username"); // Prende lo username salvato localmente
 
-    fetch(`http://127.0.0.1:5001/api/get_visited_places/${username}`)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            console.log("Dati ricevuti dal server:", data); // <-- QUI il log per il debug
+            // Richiesta GET al backend per ottenere i luoghi visitati
+            fetch(`http://127.0.0.1:5001/api/get_visited_places/${username}`)
+                .then((response) => {
+                    // Se la risposta non è OK, genera errore
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json(); // Converte la risposta in JSON
+                })
+                .then((data) => {
+                    console.log("Dati ricevuti dal server:", data); // Log per debug
 
-            const listContainer = document.getElementById("visitedPlacesList");
-            listContainer.innerHTML = "";
+                    const listContainer = document.getElementById("visitedPlacesList");
+                    listContainer.innerHTML = ""; // Svuota la lista esistente
 
-            if (data.places && data.places.length > 0) {
-                data.places.forEach((place) => {
-                    const li = document.createElement("li");
-                    li.textContent = place.name || place;
-                    
-                    listContainer.appendChild(li);
+                    // Se ci sono luoghi, li aggiunge alla lista
+                    if (data.places && data.places.length > 0) {
+                        data.places.forEach((place) => {
+                            const li = document.createElement("li"); // Crea elemento lista
+                            li.textContent = place.name || place;   // Inserisce il nome
+                            listContainer.appendChild(li);          // Aggiunge alla lista
+                        });
+                    } else {
+                        // Nessun luogo trovato
+                        listContainer.innerHTML = "<li>No places visited yet.</li>";
+                    }
+                })
+                .catch((error) => {
+                    // Errore nella fetch
+                    console.error("Errore nel caricamento dei luoghi visitati:", error);
+                    const listContainer = document.getElementById("visitedPlacesList");
+                    listContainer.innerHTML = "<li>Error loading places.</li>";
                 });
-            } else {
-                listContainer.innerHTML = "<li>No places visited yet.</li>";
-            }
-        })
-        .catch((error) => {
-            console.error("Errore nel caricamento dei luoghi visitati:", error);
-            const listContainer = document.getElementById("visitedPlacesList");
-            listContainer.innerHTML = "<li>Error loading places.</li>";
-        });
-}
+        }
 
-loadVisitedPlaces();
+        // Esegue la funzione appena viene caricato lo script
+        loadVisitedPlaces();
 
-    const user = localStorage.getItem("username");
-   
+        // Recupera lo username dal localStorage
+        const user = localStorage.getItem("username");
 
-
-
-        // Se hai funzioni per nome ed email
+        // Chiama due funzioni esterni per aggiornare nome ed email
         user_Name();
         user_Email();
+    </script>
+
+    <!-- SCRIPT 2: Upload e salvataggio immagine profilo -->
+    <script>
+        // Attende che l'intera pagina HTML sia caricata
+        document.addEventListener("DOMContentLoaded", function () {
+            const uploadInput = document.getElementById('upload');    // Input file
+            const previewImg = document.getElementById('preview');    // Immagine da aggiornare
+
+            const savedImage = localStorage.getItem('profileImage');  // Prende immagine da localStorage
+            if (savedImage) {
+                previewImg.src = savedImage;                          // Se presente, la imposta come immagine di profilo
+            }
+
+            // Quando l'utente carica una nuova immagine
+            uploadInput.addEventListener('change', function (event) {
+                const file = event.target.files[0];                   // Prende il file selezionato
+
+                // Verifica se è un'immagine
+                if (file && file.type.startsWith('image/')) {
+                    const reader = new FileReader();                  // Crea un oggetto FileReader
+
+                    // Quando ha finito di leggere il file
+                    reader.onload = function (e) {
+                        const base64 = e.target.result;               // Ottiene la stringa base64
+                        previewImg.src = base64;                      // Aggiorna l'immagine nella pagina
+                        localStorage.setItem('profileImage', base64);// Salva in localStorage
+                    };
+
+                    // Legge il file come base64
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
     </script>
 </body>
 </html>
